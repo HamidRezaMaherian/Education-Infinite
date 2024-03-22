@@ -1,17 +1,21 @@
-﻿namespace Edu_Infinite.SharedKernel
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Edu_Infinite.SharedKernel
 {
 	public interface IBaseActive
 	{
 		public bool IsActive { get; set; }
 	}
-	public abstract class EntityPrimaryBase<T>
+
+	public abstract class BaseEntity : IBaseActive
 	{
-		public List<BaseDomainEvent> Events = new List<BaseDomainEvent>();
-		public virtual T Id { get; set; }
+		private readonly List<BaseDomainEvent> _events = new List<BaseDomainEvent>();
+		public IList<BaseDomainEvent> Events => _events.AsReadOnly();
 		public DateTime CreatedDateTime { get; private set; }
-	}
-	public abstract class BaseEntity<T> : EntityPrimaryBase<T>, IBaseActive
-	{
 		public bool IsActive { get; set; }
+	}
+	public abstract class BaseEntity<T> : BaseEntity, IBaseActive
+	{
+		public virtual T Id { get; set; }
 	}
 }
