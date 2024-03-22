@@ -20,5 +20,7 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 		public string Title { get; private set; }
 		public ContentType Type { get; private set; }
 		public Blob Content { get; private set; }
+		public int SectionId { get; private set; }
+
 	}
 }
