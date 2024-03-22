@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace Edu_Infinite.Course.Infrastructure.Database
 {
-	internal class AppDbContext : DbContext
+	internal class CourseAppDbContext : DbContext
 	{
 		public DbSet<CourseDefinition> Courses { get; set; }
 		public DbSet<CourseCategory> Categories { get; set; }
