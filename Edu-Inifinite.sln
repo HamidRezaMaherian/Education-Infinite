@@ -17,15 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9F8BF074-8E2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4BB75A91-D2BC-46BF-A75F-9EC750D995F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu_Infinit.Course.Core", "Subdomains\Course\src\Edu_Infinit.Course.Core\Edu_Infinit.Course.Core.csproj", "{EED63351-0557-4E72-8891-45B8B165ACE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Course.Core", "Subdomains\Course\src\Edu_Infinit.Course.Core\Edu_Infinite.Course.Core.csproj", "{EED63351-0557-4E72-8891-45B8B165ACE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu_Infinite.Course.Application", "Subdomains\Course\src\Edu_Infinite.Course.Application\Edu_Infinite.Course.Application.csproj", "{CB835D92-E7A3-472E-A914-77C82810403E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Course.Application", "Subdomains\Course\src\Edu_Infinite.Course.Application\Edu_Infinite.Course.Application.csproj", "{CB835D92-E7A3-472E-A914-77C82810403E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu_Infinite.Course.Infrastructure", "Subdomains\Course\src\Edu_Infinite.Course.Infrastructure\Edu_Infinite.Course.Infrastructure.csproj", "{6ED7CB8B-C5F8-4A8E-A699-1FAD0A30532D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Course.Infrastructure", "Subdomains\Course\src\Edu_Infinite.Course.Infrastructure\Edu_Infinite.Course.Infrastructure.csproj", "{6ED7CB8B-C5F8-4A8E-A699-1FAD0A30532D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{33BF6A6B-A041-42E5-97C7-F76F8F786F9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu_Infinite.SharedKernel", "Shared\Edu_Infinite.SharedKernel\Edu_Infinite.SharedKernel.csproj", "{B619698C-9719-41A3-B76E-DA24458D32D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.SharedKernel", "Shared\Edu_Infinite.SharedKernel\Edu_Infinite.SharedKernel.csproj", "{B619698C-9719-41A3-B76E-DA24458D32D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
