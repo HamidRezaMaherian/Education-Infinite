@@ -7,10 +7,9 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 	public class CourseSection : BaseEntity<int>
 	{
 		private readonly CourseSectionValidator _validator = new();
-		public CourseSection(string name, ICollection<CourseContent> contents)
+		public CourseSection(string name)
 		{
 			Name = name;
-			Contents = contents;
 			_validator.ValidateAndThrow(this);
 		}
 

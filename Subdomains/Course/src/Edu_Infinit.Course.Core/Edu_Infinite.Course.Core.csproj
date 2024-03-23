@@ -14,4 +14,8 @@
     <ProjectReference Include="..\..\..\..\Shared\Edu_Infinite.SharedKernel\Edu_Infinite.SharedKernel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Specifications\" />
+  </ItemGroup>
+
 </Project>

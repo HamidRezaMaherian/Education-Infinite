@@ -7,10 +7,7 @@ namespace Edu_Infinite.Course.Infrastructure.Database.Repositories
 {
 	internal class EfRepository<T> : RepositoryBase<T>, IRepository<T> where T : class, IAggregateRoot
     {
-        public EfRepository(DbContext dbContext) : base(dbContext)
-        {
-        }
-        public EfRepository(DbContext dbContext, ISpecificationEvaluator specificationEvaluator) : base(dbContext, specificationEvaluator)
+        public EfRepository(CourseAppDbContext dbContext) : base(dbContext)
         {
         }
     }
