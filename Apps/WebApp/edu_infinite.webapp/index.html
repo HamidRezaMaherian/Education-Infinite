@@ -1,13 +1,32 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
   <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/vendors.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <title>Educrat - قالب HTML دوره آنلاین و آموزش اِدُکرات</title>
   </head>
-  <body>
-    <div id="root"></div>
+  <body class="preloader-visible" data-barba="wrapper">
+    <!-- preloader start -->
+    <div class="preloader js-preloader">
+      <div class="preloader__bg"></div>
+    </div>
+    <!-- preloader end -->
+    <main class="main-content" id="root">
+    </main>
+
+    <!-- JavaScript -->
+    <script src="vendor/leaflet/leaflet.js"></script>
+    <script src="js/vendors.js"></script>
+    <script src="js/main.js"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
