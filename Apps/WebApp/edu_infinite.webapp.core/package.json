@@ -1,0 +1,20 @@
+{
+  "name": "edu_infinite_webapp_core",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "main.ts",
+  "scripts": {
+    "package": "npm run build && cd ./dist && npm pack",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "vite-plugin-dts": "^3.7.3"
+  }
+}
