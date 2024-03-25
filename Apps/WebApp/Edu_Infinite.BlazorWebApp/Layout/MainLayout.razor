@@ -1,16 +1,24 @@
-﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+﻿@inject IJSRuntime _jsRuntime
+@inherits LayoutComponentBase
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+<NavMenu />
+
+<div class="content-wrapper  js-content-wrapper">
+   @Body
 </div>
+
+
+@code {
+   protected override async Task OnAfterRenderAsync(bool firstRender)
+   {
+      if (firstRender)
+      {
+         // await _jsRuntime.InvokeVoidAsync("loadScript", "vendor/leaflet/leaflet.js");
+         // await _jsRuntime.InvokeVoidAsync("loadScript", "js/vendors.js");
+         // await _jsRuntime.InvokeVoidAsync("loadScript", "js/main.js");
+         // await _jsRuntime.InvokeVoidAsync("loadScript", "js/79df7d11747f944da7628dfc1c76f709661cfe8f.js");
+      }
+      await base.OnAfterRenderAsync(firstRender);
+   }
+}

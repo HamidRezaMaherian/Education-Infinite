@@ -1,36 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edu_Infinite.BlazorWebApp</title>
-    <base href="/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link href="Edu_Infinite.BlazorWebApp.styles.css" rel="stylesheet" />
-    <link href="manifest.webmanifest" rel="manifest" />
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Educrat - قالب HTML دوره آنلاین و آموزش اِدُکرات</title>
+   <base href="/" />
+   <link rel="stylesheet" href="css/all.min.css" />
+   <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+   <link rel="stylesheet" href="css/vendors.css">
+   <link rel="stylesheet" href="css/main.css">
+   <!--<link rel="icon" type="image/png" href="favicon.png" />-->
+   <link href="Edu_Infinite.BlazorWebApp.styles.css" rel="stylesheet" />
+   <link href="manifest.webmanifest" rel="manifest" />
+   <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+   <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
 </head>
 
-<body>
-    <div id="app">
-        <svg class="loading-progress">
-            <circle r="40%" cx="50%" cy="50%" />
-            <circle r="40%" cx="50%" cy="50%" />
-        </svg>
-        <div class="loading-progress-text"></div>
-    </div>
+<body class="preloader-visible" data-barba="wrapper">
+   <!-- preloader start -->
+   <div class="preloader js-preloader">
+      <div class="preloader__bg"></div>
+   </div>
+   <main class="main-content" id="app">
+   </main>
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script>navigator.serviceWorker.register('service-worker.js');</script>
+   <!--<div id="blazor-error-ui">
+      An unhandled error has occurred.
+      <a href="" class="reload">Reload</a>
+      <a class="dismiss">🗙</a>
+   </div>-->
+   <!-- JavaScript -->
+   <script src="_framework/blazor.webassembly.js"></script>
+   <!--<script defer>navigator.serviceWorker.register('service-worker.js');</script>-->
+   <script>
+      function loadScript(url, onload) {
+         return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = url;
+            script.onload = onload;
+            script.onerror = reject;
+            document.body.appendChild(script);
+         });
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+         loadScript("vendor/leaflet/leaflet.js", () => loadScript("js/vendors.js", () => loadScript("js/main.js")));
+      });
+   </script>
+
 </body>
 
 </html>
