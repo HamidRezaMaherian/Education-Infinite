@@ -316,3 +316,8 @@ var KTAppInboxReply = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppInboxReply.init();
+});

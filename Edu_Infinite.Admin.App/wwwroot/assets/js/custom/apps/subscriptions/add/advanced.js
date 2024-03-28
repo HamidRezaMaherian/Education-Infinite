@@ -119,3 +119,8 @@ var KTSubscriptionsAdvanced = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTSubscriptionsAdvanced.init();
+});

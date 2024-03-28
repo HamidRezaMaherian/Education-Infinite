@@ -121,3 +121,8 @@ var KTAppEcommerceProducts = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppEcommerceProducts.init();
+});

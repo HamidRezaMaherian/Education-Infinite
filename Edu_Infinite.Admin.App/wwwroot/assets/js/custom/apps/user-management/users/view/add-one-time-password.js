@@ -166,3 +166,8 @@ var KTUsersAddOneTimePassword = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersAddOneTimePassword.init();
+});

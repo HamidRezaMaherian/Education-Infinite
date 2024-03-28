@@ -22,3 +22,8 @@ var KTLandingPage = function () {
 if (typeof module !== 'undefined') {
     module.exports = KTLandingPage;
 }
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTLandingPage.init();
+});

@@ -331,3 +331,8 @@ var KTAppEcommerceSalesSaveOrder = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppEcommerceSalesSaveOrder.init();
+});

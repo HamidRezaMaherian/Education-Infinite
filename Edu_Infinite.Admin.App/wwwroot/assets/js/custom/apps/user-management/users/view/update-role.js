@@ -125,3 +125,8 @@ var KTUsersUpdateRole = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersUpdateRole.init();
+});

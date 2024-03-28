@@ -234,3 +234,8 @@ var KTModalAdjustBalance = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTModalAdjustBalance.init();
+});

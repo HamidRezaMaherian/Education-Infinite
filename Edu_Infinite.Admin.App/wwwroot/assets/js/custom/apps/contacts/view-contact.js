@@ -67,3 +67,8 @@ var KTAppContactView = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppContactView.init();
+});

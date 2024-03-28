@@ -99,5 +99,5 @@ var KTModalOfferADealType = function () {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	window.KTModalOfferADealType = window.KTModalOfferADealType = module.exports = KTModalOfferADealType;
+	window.KTModalOfferADealType = module.exports = KTModalOfferADealType;
 }

@@ -207,3 +207,8 @@ var KTModalAddAddress = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	KTModalAddAddress.init();
+});

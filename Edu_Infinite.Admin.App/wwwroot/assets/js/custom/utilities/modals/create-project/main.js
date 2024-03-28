@@ -36,7 +36,23 @@ var KTModalCreateProject = function () {
 	};
 }();
 
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	if (!document.querySelector('#kt_modal_create_project')) {
+		return;
+	}
+
+	KTModalCreateProject.init();
+	KTModalCreateProjectType.init();
+	KTModalCreateProjectBudget.init();
+	KTModalCreateProjectSettings.init();
+	KTModalCreateProjectTeam.init();
+	KTModalCreateProjectTargets.init();
+	KTModalCreateProjectFiles.init();
+	KTModalCreateProjectComplete.init();
+});
+
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	window.KTModalCreateProject = window.KTModalCreateProject = module.exports = KTModalCreateProject;
+	window.KTModalCreateProject = module.exports = KTModalCreateProject;
 }

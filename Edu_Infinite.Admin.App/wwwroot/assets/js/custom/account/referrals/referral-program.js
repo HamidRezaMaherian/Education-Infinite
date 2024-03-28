@@ -36,3 +36,8 @@ var KTAccountReferralsReferralProgram = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAccountReferralsReferralProgram.init();
+});

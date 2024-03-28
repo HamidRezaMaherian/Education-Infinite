@@ -426,3 +426,8 @@ var KTAuthI18nDemo = function() {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAuthI18nDemo.init();
+});

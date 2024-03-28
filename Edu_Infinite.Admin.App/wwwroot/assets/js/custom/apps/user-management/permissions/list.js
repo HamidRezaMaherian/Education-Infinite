@@ -110,3 +110,8 @@ var KTUsersPermissionsList = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersPermissionsList.init();
+});

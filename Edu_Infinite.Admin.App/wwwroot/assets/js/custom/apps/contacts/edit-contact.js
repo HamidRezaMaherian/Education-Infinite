@@ -153,3 +153,8 @@ var KTAppContactEdit = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppContactEdit.init();
+});

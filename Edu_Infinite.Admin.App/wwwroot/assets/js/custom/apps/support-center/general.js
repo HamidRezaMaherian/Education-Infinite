@@ -67,3 +67,8 @@ var KTSupportCenterGeneral = function() {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTSupportCenterGeneral.init();
+});

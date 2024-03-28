@@ -187,3 +187,8 @@ var KTUsersUpdatePassword = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersUpdatePassword.init();
+});

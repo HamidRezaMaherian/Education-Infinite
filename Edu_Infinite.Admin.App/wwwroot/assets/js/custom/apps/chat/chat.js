@@ -61,3 +61,12 @@ var KTAppChat = function () {
         }
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	// Init inline chat messenger
+    KTAppChat.init(document.querySelector('#kt_chat_messenger'));
+
+	// Init drawer chat messenger
+	KTAppChat.init(document.querySelector('#kt_drawer_chat_messenger'));
+});

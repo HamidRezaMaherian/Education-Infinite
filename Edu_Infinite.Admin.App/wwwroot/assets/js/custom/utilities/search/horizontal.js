@@ -33,3 +33,8 @@ var KTSearchHorizontal = function () {
         }
     }     
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTSearchHorizontal.init();
+});

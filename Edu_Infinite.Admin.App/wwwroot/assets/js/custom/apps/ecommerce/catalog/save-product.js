@@ -409,3 +409,8 @@ var KTAppEcommerceSaveProduct = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppEcommerceSaveProduct.init();
+});

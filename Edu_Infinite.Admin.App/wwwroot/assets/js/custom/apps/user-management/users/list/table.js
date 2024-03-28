@@ -308,3 +308,8 @@ var KTUsersList = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersList.init();
+});

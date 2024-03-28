@@ -1,31 +1,3 @@
-//
-// Global init of core components
-//
-
-// Init components
-var KTComponents = function () {
-    // Public methods
-    return {
-        init: function () {
-            KTApp.init();
-			KTDrawer.init();
-			KTMenu.init();
-			KTScroll.init();
-			KTSticky.init();
-			KTSwapper.init();
-			KTToggle.init();
-			KTScrolltop.init();
-			KTDialer.init();	
-			KTImageInput.init();
-			KTPasswordMeter.init();	
-        }
-    }	
-}();
-
-// Declare KTApp for Webpack support
-if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	window.KTComponents = window.KTComponents = module.exports = KTComponents;
-}
 "use strict";
 
 // Class definition
@@ -711,7 +683,7 @@ var KTApp = function () {
 
 // Declare KTApp for Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTApp = module.exports = KTApp;
+    module.exports = KTApp;
 }
 "use strict";
 
@@ -888,7 +860,7 @@ KTBlockUI.getInstance = function(element) {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTBlockUI = module.exports = KTBlockUI;
+    module.exports = KTBlockUI;
 }
 "use strict";
 // DOCS: https://javascript.info/cookie
@@ -950,7 +922,7 @@ var KTCookie = function() {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTCookie = module.exports = KTCookie;
+    module.exports = KTCookie;
 }
 
 "use strict";
@@ -1240,7 +1212,7 @@ KTDialer.init = function() {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTDialer = module.exports = KTDialer;
+    module.exports = KTDialer;
 }
 "use strict";
 
@@ -1727,7 +1699,7 @@ KTDrawer.init = function() {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTDrawer = module.exports = KTDrawer;
+    module.exports = KTDrawer;
 }
 "use strict";
 
@@ -1848,7 +1820,7 @@ var KTEventHandler = function() {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTEventHandler = module.exports = KTEventHandler;
+    module.exports = KTEventHandler;
 }
 
 "use strict";
@@ -2012,7 +1984,7 @@ var KTFeedback = function(options) {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTFeedback = module.exports = KTFeedback;
+    module.exports = KTFeedback;
 }
 
 "use strict";
@@ -2222,7 +2194,7 @@ KTImageInput.init = function() {
 
 // Webpack Support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTImageInput = module.exports = KTImageInput;
+    module.exports = KTImageInput;
 }
 
 "use strict";
@@ -3362,7 +3334,7 @@ KTMenu.init = function() {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTMenu = module.exports = KTMenu;
+    module.exports = KTMenu;
 }
 
 "use strict";
@@ -3616,7 +3588,7 @@ KTPasswordMeter.init = function() {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTPasswordMeter = module.exports = KTPasswordMeter;
+    module.exports = KTPasswordMeter;
 }
 "use strict";
 
@@ -3974,7 +3946,7 @@ KTScroll.init = function() {
 
 // Webpack Support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTScroll = module.exports = KTScroll;
+    module.exports = KTScroll;
 }
 
 "use strict";
@@ -4139,7 +4111,7 @@ KTScrolltop.init = function() {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTScrolltop = module.exports = KTScrolltop;
+    module.exports = KTScrolltop;
 }
 
 "use strict";
@@ -4579,7 +4551,7 @@ KTSearch.getInstance = function(element) {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTSearch = module.exports = KTSearch;
+    module.exports = KTSearch;
 }
 
 "use strict";
@@ -4927,7 +4899,7 @@ KTStepper.getInstance = function(element) {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTStepper = module.exports = KTStepper;
+    module.exports = KTStepper;
 }
 
 "use strict";
@@ -5338,7 +5310,7 @@ KTSticky.init = function() {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTSticky = module.exports = KTSticky;
+    module.exports = KTSticky;
 }
 
 "use strict";
@@ -5519,7 +5491,7 @@ KTSwapper.init = function() {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTSwapper = module.exports = KTSwapper;
+    module.exports = KTSwapper;
 }
 
 "use strict";
@@ -5736,7 +5708,7 @@ KTToggle.init = function() {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTToggle = module.exports = KTToggle;
+    module.exports = KTToggle;
 }
 "use strict";
 
@@ -7338,7 +7310,49 @@ var KTUtil = function() {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTUtil = module.exports = KTUtil;
+    module.exports = KTUtil;
+}
+//
+// Global init of core components
+//
+
+// Init components
+var KTComponents = function () {
+    // Public methods
+    return {
+        init: function () {
+            KTApp.init();
+			KTDrawer.init();
+			KTMenu.init();
+			KTScroll.init();
+			KTSticky.init();
+			KTSwapper.init();
+			KTToggle.init();
+			KTScrolltop.init();
+			KTDialer.init();	
+			KTImageInput.init();
+			KTPasswordMeter.init();	
+        }
+    }	
+}();
+
+// On document ready
+if (document.readyState === "loading") {
+	document.addEventListener("DOMContentLoaded", function() {
+		KTComponents.init();
+	});
+ } else {
+	KTComponents.init();
+ }
+
+ // Init page loader
+window.addEventListener("load", function() {
+    KTApp.hidePageLoading();
+});
+
+// Declare KTApp for Webpack support
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+	window.KTComponents = module.exports = KTComponents;
 }
 "use strict";
 
@@ -7647,6 +7661,11 @@ var KTAppLayoutBuilder = function() {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAppLayoutBuilder.init();
+});
 "use strict";
 
 // Class definition
@@ -7818,6 +7837,11 @@ var KTLayoutSearch = function() {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTLayoutSearch.init();
+});
 "use strict";
 
 // Class definition
@@ -7928,6 +7952,11 @@ var KTAppSidebar = function () {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	KTAppSidebar.init();
+});
 "use strict";
 
 // Class definition
@@ -7954,9 +7983,14 @@ var KTThemeModeUser = function () {
     };
 }();
 
+// Initialize app on document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTThemeModeUser.init();
+});
+
 // Declare KTThemeModeUser for Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTThemeModeUser = module.exports = KTThemeModeUser;
+    module.exports = KTThemeModeUser;
 }
 "use strict";
 
@@ -8120,9 +8154,14 @@ var KTThemeMode = function () {
     };
 }();
 
+// Initialize app on document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTThemeMode.init();
+});
+
 // Declare KTThemeMode for Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    window.KTThemeMode = module.exports = KTThemeMode;
+    module.exports = KTThemeMode;
 }
 "use strict";
 
@@ -8193,3 +8232,8 @@ var KTLayoutToolbar = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTLayoutToolbar.init();
+});

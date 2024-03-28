@@ -345,3 +345,8 @@ var KTCreateCampaign = function () {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	KTCreateCampaign.init();
+});

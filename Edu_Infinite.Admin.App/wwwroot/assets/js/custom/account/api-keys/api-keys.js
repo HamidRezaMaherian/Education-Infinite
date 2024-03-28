@@ -61,3 +61,8 @@ var KTAccountAPIKeys = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAccountAPIKeys.init();
+});

@@ -176,3 +176,8 @@ var KTUsersAddUser = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersAddUser.init();
+});

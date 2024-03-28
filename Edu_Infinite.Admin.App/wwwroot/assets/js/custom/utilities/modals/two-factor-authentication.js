@@ -259,3 +259,8 @@ var KTModalTwoFactorAuthentication = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTModalTwoFactorAuthentication.init();
+});

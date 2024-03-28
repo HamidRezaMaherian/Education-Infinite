@@ -148,3 +148,8 @@ var KTAccountSettingsProfileDetails = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAccountSettingsProfileDetails.init();
+});

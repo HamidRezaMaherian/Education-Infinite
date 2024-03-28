@@ -129,3 +129,8 @@ var KTAppEcommerceReportCustomerOrders = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppEcommerceReportCustomerOrders.init();
+});

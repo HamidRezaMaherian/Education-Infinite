@@ -178,3 +178,8 @@ var KTUsersAddRole = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersAddRole.init();
+});

@@ -40,3 +40,8 @@ var KTModalShareEarn = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTModalShareEarn.init();
+});

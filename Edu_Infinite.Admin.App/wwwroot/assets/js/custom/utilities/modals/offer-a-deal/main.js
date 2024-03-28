@@ -36,7 +36,20 @@ var KTModalOfferADeal = function () {
 	};
 }();
 
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	if (!document.querySelector('#kt_modal_offer_a_deal')) {
+		return;
+	}
+
+    KTModalOfferADeal.init();
+    KTModalOfferADealType.init();
+    KTModalOfferADealDetails.init();
+    KTModalOfferADealFinance.init();
+    KTModalOfferADealComplete.init();
+});
+
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	window.KTModalOfferADeal = window.KTModalOfferADeal = module.exports = KTModalOfferADeal;
+	window.KTModalOfferADeal = module.exports = KTModalOfferADeal;
 }

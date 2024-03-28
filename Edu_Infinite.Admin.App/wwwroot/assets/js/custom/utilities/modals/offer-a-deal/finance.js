@@ -136,5 +136,5 @@ var KTModalOfferADealFinance = function () {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	window.KTModalOfferADealFinance = window.KTModalOfferADealFinance = module.exports = KTModalOfferADealFinance;
+	window.KTModalOfferADealFinance = module.exports = KTModalOfferADealFinance;
 }

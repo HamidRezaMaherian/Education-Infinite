@@ -227,3 +227,8 @@ var KTUsersViewMain = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersViewMain.init();
+});

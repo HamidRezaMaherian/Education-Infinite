@@ -125,3 +125,8 @@ var KTUsersUpdateDetails = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersUpdateDetails.init();
+});

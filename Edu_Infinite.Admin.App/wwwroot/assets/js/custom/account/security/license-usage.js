@@ -61,3 +61,8 @@ var KTAccountSecurityLicenseUsage = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAccountSecurityLicenseUsage.init();
+});

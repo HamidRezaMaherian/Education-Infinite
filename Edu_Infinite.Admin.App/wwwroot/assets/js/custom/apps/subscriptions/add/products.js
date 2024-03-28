@@ -150,3 +150,8 @@ var KTSubscriptionsProducts = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTSubscriptionsProducts.init();
+});

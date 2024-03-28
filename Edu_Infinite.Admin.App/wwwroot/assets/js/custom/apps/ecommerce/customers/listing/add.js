@@ -231,3 +231,8 @@ var KTModalCustomersAdd = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	KTModalCustomersAdd.init();
+});

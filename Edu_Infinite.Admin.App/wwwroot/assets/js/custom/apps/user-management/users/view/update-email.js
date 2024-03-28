@@ -159,3 +159,8 @@ var KTUsersUpdateEmail = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersUpdateEmail.init();
+});

@@ -932,3 +932,8 @@ var KTFileManagerList = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTFileManagerList.init();
+});

@@ -100,5 +100,5 @@ var KTModalCreateProjectType = function () {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	window.KTModalCreateProjectType = window.KTModalCreateProjectType = module.exports = KTModalCreateProjectType;
+	window.KTModalCreateProjectType = module.exports = KTModalCreateProjectType;
 }

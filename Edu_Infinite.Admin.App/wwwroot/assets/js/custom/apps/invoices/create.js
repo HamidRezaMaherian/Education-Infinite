@@ -104,3 +104,8 @@ var KTAppInvoicesCreate = function () {
         }
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppInvoicesCreate.init();
+});

@@ -122,3 +122,8 @@ var KTCustomerViewStatements = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTCustomerViewStatements.init();
+});

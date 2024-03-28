@@ -120,3 +120,8 @@ var KTAppEcommerceReportViews = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppEcommerceReportViews.init();
+});

@@ -229,3 +229,8 @@ var KTAccountSettingsSigninMethods = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAccountSettingsSigninMethods.init();
+});

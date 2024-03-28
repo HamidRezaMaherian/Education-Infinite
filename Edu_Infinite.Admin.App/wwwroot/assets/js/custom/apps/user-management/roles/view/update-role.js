@@ -176,3 +176,8 @@ var KTUsersUpdatePermissions = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersUpdatePermissions.init();
+});

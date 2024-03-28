@@ -78,3 +78,8 @@ var KTModalCustomerSelect = function() {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTModalCustomerSelect.init();
+});

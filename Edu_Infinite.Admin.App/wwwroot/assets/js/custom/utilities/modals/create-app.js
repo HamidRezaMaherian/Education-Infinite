@@ -320,3 +320,8 @@ var KTCreateApp = function () {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTCreateApp.init();
+});

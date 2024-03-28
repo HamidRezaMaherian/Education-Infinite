@@ -200,3 +200,8 @@ var KTModalAddPayment = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTModalAddPayment.init();
+});

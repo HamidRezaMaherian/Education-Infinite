@@ -131,3 +131,8 @@ var KTAccountBillingGeneral = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAccountBillingGeneral.init();
+});

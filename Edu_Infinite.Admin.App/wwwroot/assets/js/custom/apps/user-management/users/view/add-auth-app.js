@@ -74,3 +74,8 @@ var KTUsersAddAuthApp = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersAddAuthApp.init();
+});

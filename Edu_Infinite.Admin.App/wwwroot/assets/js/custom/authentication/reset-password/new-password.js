@@ -238,3 +238,8 @@ var KTAuthNewPassword = function() {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAuthNewPassword.init();
+});

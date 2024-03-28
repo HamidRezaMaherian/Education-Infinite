@@ -824,3 +824,8 @@ var KTAppCalendar = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppCalendar.init();
+});

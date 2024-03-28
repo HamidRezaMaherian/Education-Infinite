@@ -182,3 +182,8 @@ var KTCustomersExport = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTCustomersExport.init();
+});

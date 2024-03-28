@@ -204,3 +204,8 @@ var KTModalNewTarget = function () {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	KTModalNewTarget.init();
+});

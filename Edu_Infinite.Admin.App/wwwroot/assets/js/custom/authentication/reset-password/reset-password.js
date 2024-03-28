@@ -203,3 +203,8 @@ var KTAuthResetPassword = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAuthResetPassword.init();
+});

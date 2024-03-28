@@ -182,3 +182,8 @@ var KTSubscriptionsExport = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTSubscriptionsExport.init();
+});

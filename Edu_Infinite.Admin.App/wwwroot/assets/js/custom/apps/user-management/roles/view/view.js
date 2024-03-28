@@ -218,3 +218,8 @@ var KTUsersViewRole = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersViewRole.init();
+});

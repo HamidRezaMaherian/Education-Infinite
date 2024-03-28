@@ -160,5 +160,10 @@ var KTSignupFreeTrial = function() {
     };
 }();
 
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTSignupFreeTrial.init();
+});
+
 
  

@@ -124,3 +124,8 @@ var KTModalUpdateCustomer = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTModalUpdateCustomer.init();
+});

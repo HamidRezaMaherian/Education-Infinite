@@ -270,3 +270,8 @@ var KTSubscriptionsList = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTSubscriptionsList.init();
+});

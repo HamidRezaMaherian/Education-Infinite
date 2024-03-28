@@ -109,3 +109,8 @@ var KTAccountSettingsDeactivateAccount = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAccountSettingsDeactivateAccount.init();
+});

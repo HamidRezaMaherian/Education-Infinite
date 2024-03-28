@@ -110,3 +110,8 @@ var KTModalSelectLocation = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTModalSelectLocation.init();
+});

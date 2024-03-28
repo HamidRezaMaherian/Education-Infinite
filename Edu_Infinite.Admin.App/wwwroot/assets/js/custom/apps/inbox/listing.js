@@ -51,3 +51,8 @@ var KTAppInboxListing = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppInboxListing.init();
+});

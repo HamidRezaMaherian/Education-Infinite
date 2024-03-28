@@ -148,3 +148,8 @@ var KTAccountSecuritySummary = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAccountSecuritySummary.init();
+});

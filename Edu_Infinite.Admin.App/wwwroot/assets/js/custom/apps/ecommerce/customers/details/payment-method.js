@@ -103,3 +103,8 @@ var KTCustomerViewPaymentMethod = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTCustomerViewPaymentMethod.init();
+});

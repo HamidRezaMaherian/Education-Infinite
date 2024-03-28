@@ -101,3 +101,8 @@ var KTDatatablesClassic = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTDatatablesClassic.init();
+});

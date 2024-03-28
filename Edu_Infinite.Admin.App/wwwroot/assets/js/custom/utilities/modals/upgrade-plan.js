@@ -111,3 +111,8 @@ var KTModalUpgradePlan = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTModalUpgradePlan.init();
+});

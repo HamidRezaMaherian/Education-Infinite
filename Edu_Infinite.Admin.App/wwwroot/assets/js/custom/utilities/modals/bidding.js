@@ -257,3 +257,8 @@ var KTModalBidding = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTModalBidding.init();
+});

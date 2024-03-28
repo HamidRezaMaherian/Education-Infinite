@@ -28,5 +28,5 @@ var KTModalOfferADealComplete = function () {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	window.KTModalOfferADealComplete = window.KTModalOfferADealComplete = module.exports = KTModalOfferADealComplete;
+	window.KTModalOfferADealComplete = module.exports = KTModalOfferADealComplete;
 }

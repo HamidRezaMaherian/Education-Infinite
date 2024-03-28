@@ -53,5 +53,5 @@ var KTModalCreateProjectTeam = function () {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	window.KTModalCreateProjectTeam = window.KTModalCreateProjectTeam = module.exports = KTModalCreateProjectTeam;
+	window.KTModalCreateProjectTeam = module.exports = KTModalCreateProjectTeam;
 }

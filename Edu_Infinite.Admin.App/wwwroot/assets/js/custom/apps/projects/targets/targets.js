@@ -31,3 +31,8 @@ var KTProjectTargets = function () {
     }
 }();
 
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTProjectTargets.init();
+});

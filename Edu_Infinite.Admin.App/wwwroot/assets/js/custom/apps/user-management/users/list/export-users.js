@@ -163,3 +163,8 @@ var KTModalExportUsers = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTModalExportUsers.init();
+});

@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Api.Shared", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Admin", "Admin", "{7B03FC9D-2095-4EF4-AFAD-DF3183671D55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu_Infinite.Admin.App", "Edu_Infinite.Admin.App\Edu_Infinite.Admin.App.csproj", "{C1AD0A35-C8BC-4C34-80BF-5E0FB00BA65F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Admin.App", "Edu_Infinite.Admin.App\Edu_Infinite.Admin.App.csproj", "{C1AD0A35-C8BC-4C34-80BF-5E0FB00BA65F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

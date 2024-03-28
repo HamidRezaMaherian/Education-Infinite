@@ -48,3 +48,8 @@ var KTAppFileManagerSettings = function () {
         }
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppFileManagerSettings.init();
+});

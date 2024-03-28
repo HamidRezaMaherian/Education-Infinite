@@ -99,3 +99,8 @@ var KTEcommerceUpdateProfile = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	KTEcommerceUpdateProfile.init();
+});

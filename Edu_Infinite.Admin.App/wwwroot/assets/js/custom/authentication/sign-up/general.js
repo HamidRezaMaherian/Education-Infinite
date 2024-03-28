@@ -346,3 +346,8 @@ var KTSignupGeneral = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTSignupGeneral.init();
+});

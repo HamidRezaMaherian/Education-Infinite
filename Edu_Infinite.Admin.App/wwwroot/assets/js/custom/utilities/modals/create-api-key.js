@@ -176,3 +176,8 @@ var KTModalCreateApiKey = function () {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	KTModalCreateApiKey.init();
+});

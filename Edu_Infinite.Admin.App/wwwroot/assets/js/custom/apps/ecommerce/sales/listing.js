@@ -174,3 +174,8 @@ var KTAppEcommerceSalesListing = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppEcommerceSalesListing.init();
+});

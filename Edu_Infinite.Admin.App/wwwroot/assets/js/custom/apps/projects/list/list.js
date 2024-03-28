@@ -72,3 +72,8 @@ var KTProjectList = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTProjectList.init();
+});

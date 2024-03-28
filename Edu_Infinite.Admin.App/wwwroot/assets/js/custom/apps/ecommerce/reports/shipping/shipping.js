@@ -130,3 +130,8 @@ var KTAppEcommerceReportShipping = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppEcommerceReportShipping.init();
+});

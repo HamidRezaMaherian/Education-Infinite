@@ -14,3 +14,8 @@ var KTAccountSettingsOverview = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTAccountSettingsOverview.init();
+});

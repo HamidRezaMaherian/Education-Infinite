@@ -273,3 +273,8 @@ var KTModalTopUpWallet = function () {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	KTModalTopUpWallet.init();
+});

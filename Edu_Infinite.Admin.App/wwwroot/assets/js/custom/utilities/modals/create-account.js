@@ -350,3 +350,8 @@ var KTCreateAccount = function () {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTCreateAccount.init();
+});

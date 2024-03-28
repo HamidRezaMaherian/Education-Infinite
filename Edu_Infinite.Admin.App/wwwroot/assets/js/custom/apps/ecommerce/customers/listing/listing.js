@@ -235,3 +235,8 @@ var KTCustomersList = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTCustomersList.init();
+});

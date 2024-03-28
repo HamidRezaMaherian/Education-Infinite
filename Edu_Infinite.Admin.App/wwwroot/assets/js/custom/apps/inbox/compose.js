@@ -287,3 +287,8 @@ var KTAppInboxCompose = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppInboxCompose.init();
+});

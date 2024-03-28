@@ -308,3 +308,9 @@ var KTProjectOverview = function () {
         }
     }
 }();
+
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTProjectOverview.init();
+});

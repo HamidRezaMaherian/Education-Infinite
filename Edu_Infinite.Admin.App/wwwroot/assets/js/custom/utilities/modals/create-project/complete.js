@@ -28,5 +28,5 @@ var KTModalCreateProjectComplete = function () {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	window.KTModalCreateProjectComplete = window.KTModalCreateProjectComplete = module.exports = KTModalCreateProjectComplete;
+	window.KTModalCreateProjectComplete = module.exports = KTModalCreateProjectComplete;
 }

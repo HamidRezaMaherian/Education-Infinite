@@ -136,5 +136,5 @@ var KTModalCreateProjectBudget = function () {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	window.KTModalCreateProjectBudget = window.KTModalCreateProjectBudget = module.exports = KTModalCreateProjectBudget;
+	window.KTModalCreateProjectBudget = module.exports = KTModalCreateProjectBudget;
 }

@@ -204,3 +204,8 @@ var KTModalNewAddress = function () {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	KTModalNewAddress.init();
+});

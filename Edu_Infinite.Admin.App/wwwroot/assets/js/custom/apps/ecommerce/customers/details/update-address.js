@@ -210,3 +210,8 @@ var KTModalUpdateAddress = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTModalUpdateAddress.init();
+});

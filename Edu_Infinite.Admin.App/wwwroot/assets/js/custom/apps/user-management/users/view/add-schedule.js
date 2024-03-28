@@ -216,3 +216,8 @@ var KTUsersAddSchedule = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersAddSchedule.init();
+});

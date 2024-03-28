@@ -3590,3 +3590,8 @@ var KTWidgets = function () {
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
     module.exports = KTWidgets;
 }
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTWidgets.init();
+});

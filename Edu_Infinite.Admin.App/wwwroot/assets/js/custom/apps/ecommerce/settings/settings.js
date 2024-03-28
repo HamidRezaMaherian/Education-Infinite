@@ -181,3 +181,8 @@ var KTAppEcommerceSettings = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTAppEcommerceSettings.init();
+});

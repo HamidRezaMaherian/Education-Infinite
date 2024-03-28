@@ -212,3 +212,8 @@ var KTModalNewTicket = function () {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	KTModalNewTicket.init();
+});

@@ -157,3 +157,8 @@ var KTSignupComingSoon = function() {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTSignupComingSoon.init();
+});

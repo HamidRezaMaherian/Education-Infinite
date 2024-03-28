@@ -73,5 +73,5 @@ var KTModalCreateProjectFiles = function () {
 
 // Webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-	window.KTModalCreateProjectFiles = window.KTModalCreateProjectFiles = module.exports = KTModalCreateProjectFiles;
+	window.KTModalCreateProjectFiles = module.exports = KTModalCreateProjectFiles;
 }

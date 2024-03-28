@@ -206,3 +206,8 @@ var KTModalNewCard = function () {
 		}
 	};
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+	KTModalNewCard.init();
+});

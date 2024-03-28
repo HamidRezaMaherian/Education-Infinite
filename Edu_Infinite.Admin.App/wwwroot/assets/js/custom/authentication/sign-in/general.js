@@ -214,3 +214,8 @@ var KTSigninGeneral = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTSigninGeneral.init();
+});

@@ -133,3 +133,8 @@ var KTSigninTwoFactor = function() {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTSigninTwoFactor.init();
+});

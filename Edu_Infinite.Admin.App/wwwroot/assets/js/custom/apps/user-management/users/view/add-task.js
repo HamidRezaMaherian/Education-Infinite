@@ -317,3 +317,8 @@ var KTUsersAddTask = function () {
         }
     };
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTUsersAddTask.init();
+});

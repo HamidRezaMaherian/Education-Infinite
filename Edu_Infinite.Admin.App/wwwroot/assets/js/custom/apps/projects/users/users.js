@@ -45,3 +45,8 @@ var KTProjectUsers = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function() {
+    KTProjectUsers.init();
+});

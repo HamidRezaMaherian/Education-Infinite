@@ -122,3 +122,8 @@ var KTCustomerViewInvoices = function () {
         }
     }
 }();
+
+// On document ready
+KTUtil.onDOMContentLoaded(function () {
+    KTCustomerViewInvoices.init();
+});
