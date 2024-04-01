@@ -2,7 +2,7 @@
 {
    public class BaseFilterRequestDto
    {
-      public int pageSize { get; set; }
-      public int pageNumber { get; set; }
+      public int PageSize { get; set; }
+      public int PageNumber { get; set; }
    }
 }

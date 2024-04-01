@@ -27,7 +27,7 @@ namespace Edu_Infinite.Api.Controllers.Course
       [ProducesResponseType(400)]
       public async Task<IActionResult> Filter([FromQuery] CourseFilterReqDto reqDto)
       {
-         var queryRes = await _repo.ListAsync(new BasePaginationSpec<CourseDefinition>(reqDto.pageNumber, reqDto.pageSize));
+         var queryRes = await _repo.ListAsync(new BasePaginationSpec<CourseDefinition>(reqDto.PageNumber, reqDto.PageSize));
          var apiRes = _mapper.Map<List<CourseResponseDto>>(queryRes);
          return Ok(apiRes);
       }

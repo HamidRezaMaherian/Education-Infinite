@@ -9,7 +9,7 @@ namespace Edu_Infinite.Apps.Admin.Pages.Courses
    public class ListModel : PageModel
    {
       [BindProperty]
-      public ListViewModel ListViewModel { get; private set; }
+      public ListViewModel<CourseResponseDto> ListViewModel { get; private set; }
       private readonly CourseClientService _courseClientService;
       public ListModel(CourseClientService courseClientService)
       {
@@ -20,8 +20,8 @@ namespace Edu_Infinite.Apps.Admin.Pages.Courses
 
       public async Task OnGet()
       {
-         Courses = await _courseClientService.SearchCoursesByFilter();
-         ListViewModel = new ListViewModel(Courses.Select(i=>i as object).ToList());
+         Courses = await _courseClientService.SearchCoursesByFilter(new CourseFilterReqDto() { PageNumber = 1, PageSize = 10 });
+         ListViewModel = new ListViewModel<CourseResponseDto>(Courses);
          ListViewModel.AddColumn("Name", "نام");
          ListViewModel.AddColumn("Description", "توضیحات");
          ListViewModel.AddColumn("ShortDescription", "توضیحات کوتاه");

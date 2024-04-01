@@ -5,9 +5,9 @@ namespace Edu_Infinite.Apps.Admin.Pages.Shared.ViewComponents
 {
    public class ListViewComponent : ViewComponent
    {
-      public IViewComponentResult Invoke(ListViewModel model)
+      public IViewComponentResult Invoke(ListViewModel<object> input)
       {
-         return View<ListViewModel>("ListViewComponent", model);
+         return View<ListViewModel<object>>("ListViewComponent", input);
       }
    }
 }

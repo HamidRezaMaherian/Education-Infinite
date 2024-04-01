@@ -1,4 +1,5 @@
 ﻿@page "/course/list-management"
+@using Edu_Infinite.Apps.Admin.Common.Models
 @using Edu_Infinite.Apps.Admin.Pages.Shared.ViewComponents
 @model Edu_Infinite.Apps.Admin.Pages.Courses.ListModel
 @{
@@ -146,7 +147,7 @@
       <!--begin::Content container-->
       <div id="kt_app_content_container" class="app-container container-xxl">
          <!--begin::Card-->
-         @(Component.InvokeAsync<ListViewComponent>(Model.ListViewModel))
+         @(await Component.InvokeAsync<ListViewComponent>(new ListViewModel<object>(Model.ListViewModel.Rows.ToList<object>(), Model.ListViewModel.Columns)))
          <!--end::Card-->
       </div>
       <!--end::Content container-->

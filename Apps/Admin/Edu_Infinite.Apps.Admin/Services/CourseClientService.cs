@@ -17,9 +17,11 @@ namespace Edu_Infinite.Apps.Admin.Services
 
       }
 
-      public Task<ICollection<CourseResponseDto>> SearchCoursesByFilter()
+      public Task<ICollection<CourseResponseDto>> SearchCoursesByFilter(CourseFilterReqDto filterReqDto)
       {
          var request = new RestRequest("/api/Course/Filter");
+         foreach (var prop in typeof(CourseFilterReqDto).GetProperties())
+            request.AddQueryParameter(prop.Name, prop.GetValue(filterReqDto)!.ToString());
          return _client.GetAsync<ICollection<CourseResponseDto>>(request);
          //return httpRes.Content.rea;
       }
