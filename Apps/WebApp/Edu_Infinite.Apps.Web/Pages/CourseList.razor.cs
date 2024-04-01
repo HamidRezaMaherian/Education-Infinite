@@ -11,7 +11,7 @@ namespace Edu_Infinite.Apps.Web.Pages
       public ICollection<CourseResponseDto> Courses { get; set; }
       protected override async Task OnInitializedAsync()
       {
-         Courses=await ClientService.SearchCoursesByFilter(new CourseFilterReqDto() { pageNumber = 1 ,pageSize=2});
+         Courses=await ClientService.SearchCoursesByFilter(new CourseFilterReqDto() { PageNumber = 1 ,PageSize=2});
          await base.OnInitializedAsync();
       }
    }
