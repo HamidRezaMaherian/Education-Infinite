@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Api.Shared", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApp", "WebApp", "{224DF6ED-FBFA-4B73-8020-A74CDEA110FB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Apps.Web", "Apps\WebApp\Edu_Infinite.Apps.Web\Edu_Infinite.Apps.Web.csproj", "{60977E15-8CEA-41AE-859A-AE999101E08F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{A32E4013-56C6-45D5-A3CB-9D1F3EA312B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A32E4013-56C6-45D5-A3CB-9D1F3EA312B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A32E4013-56C6-45D5-A3CB-9D1F3EA312B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60977E15-8CEA-41AE-859A-AE999101E08F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60977E15-8CEA-41AE-859A-AE999101E08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60977E15-8CEA-41AE-859A-AE999101E08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60977E15-8CEA-41AE-859A-AE999101E08F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{9AA00363-E949-46CA-A1CF-EBE1B958B583} = {FE244DCA-A9DE-48CA-9109-877059217C07}
 		{A32E4013-56C6-45D5-A3CB-9D1F3EA312B7} = {FE244DCA-A9DE-48CA-9109-877059217C07}
 		{224DF6ED-FBFA-4B73-8020-A74CDEA110FB} = {43FE2B8B-CC08-4FE3-BFB0-73FBF2C55908}
+		{60977E15-8CEA-41AE-859A-AE999101E08F} = {224DF6ED-FBFA-4B73-8020-A74CDEA110FB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB5EFA9A-17BA-40F3-825E-582AADEBCC98}
