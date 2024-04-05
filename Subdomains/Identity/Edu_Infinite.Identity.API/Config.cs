@@ -50,16 +50,16 @@ public static class Config
             },
             new Client
             {
-                ClientId = "client_web",
+                ClientId = "client_web_host",
                 ClientSecrets = { new Secret("secret".Sha256()) },
 
                 AllowedGrantTypes = GrantTypes.Code,
                 
                 // where to redirect to after login
-                RedirectUris = { "https://localhost:5002/signin-oidc" },
+                RedirectUris = { "https://localhost:7068/signin-oidc" },
 
                 // where to redirect to after logout
-                PostLogoutRedirectUris = { "https://localhost:5002/signout-callback-oidc" },
+                PostLogoutRedirectUris = { "https://localhost:7068/signout-callback-oidc" },
 
                 AllowOfflineAccess = true,
 
@@ -67,8 +67,8 @@ public static class Config
                 {
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
-                    "verification",
-                    "api1",
+                    //"verification",
+                    //"api1",
                 }
             }
         };

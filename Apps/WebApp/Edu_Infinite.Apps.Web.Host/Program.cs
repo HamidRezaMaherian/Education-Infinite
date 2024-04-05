@@ -10,7 +10,7 @@ namespace Edu_Infinite.Apps.Web.Host
          // Add services to the container.
          builder.Services.AddRazorPages();
          builder.Services.AddRazorComponents().AddInteractiveWebAssemblyComponents();
-         builder.Services.ConfigureServices();
+         builder.Services.ConfigureServices();  
          builder.Services.AddBff();
 
          builder.Services.AddAuthentication(options =>
@@ -26,10 +26,10 @@ namespace Edu_Infinite.Apps.Web.Host
              })
              .AddOpenIdConnect("oidc", options =>
              {
-                options.Authority = "https://demo.duendesoftware.com";
+                options.Authority = "https://localhost:7196/";
 
                 // confidential client using code flow + PKCE
-                options.ClientId = "interactive.confidential";
+                options.ClientId = "client_web_host";
                 options.ClientSecret = "secret";
                 options.ResponseType = "code";
                 options.ResponseMode = "query";
@@ -42,8 +42,8 @@ namespace Edu_Infinite.Apps.Web.Host
                 options.Scope.Clear();
                 options.Scope.Add("openid");
                 options.Scope.Add("profile");
-                options.Scope.Add("api");
-                options.Scope.Add("offline_access");
+                //options.Scope.Add("api1");
+                //options.Scope.Add("offline_access");
              });
 
          var app = builder.Build();

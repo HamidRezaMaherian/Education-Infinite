@@ -9,7 +9,7 @@ namespace Edu_Infinite.Apps.Web.Services
 
       public CourseClientService(IConfiguration configuration)
       {
-         var options = new RestClientOptions(configuration["API"]!);
+         var options = new RestClientOptions("https://localhost:7181");
 
          _client = new RestClient(options);
 
