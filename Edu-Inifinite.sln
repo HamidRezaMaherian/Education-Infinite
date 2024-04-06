@@ -49,6 +49,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Apps.Web.Host"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Identity.API", "Subdomains\Identity\Edu_Infinite.Identity.API\Edu_Infinite.Identity.API.csproj", "{DEC856A1-B6D1-420C-B920-1A03AFFDB11A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7BC3D97D-279C-4196-B685-09C62765F316}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu_Infinite.Order.Core", "Subdomains\Order\src\Edu_Infinite.Order.Core\Edu_Infinite.Order.Core.csproj", "{374C9B67-E90C-460A-BE2C-2D277A56ED5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu_Infinite.Order.Application", "Subdomains\Order\src\Edu_Infinite.Order.Application\Edu_Infinite.Order.Application.csproj", "{1B62A8BB-2C66-41B7-84C6-8BF32BF55B4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu_Infinite.Order.Infrastructure", "Subdomains\Order\src\Edu_Infinite.Order.Infrastructure\Edu_Infinite.Order.Infrastructure.csproj", "{9A9AD4B9-E7B0-4C41-A1FB-ACE6978C56A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +103,18 @@ Global
 		{DEC856A1-B6D1-420C-B920-1A03AFFDB11A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEC856A1-B6D1-420C-B920-1A03AFFDB11A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEC856A1-B6D1-420C-B920-1A03AFFDB11A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{374C9B67-E90C-460A-BE2C-2D277A56ED5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{374C9B67-E90C-460A-BE2C-2D277A56ED5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{374C9B67-E90C-460A-BE2C-2D277A56ED5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{374C9B67-E90C-460A-BE2C-2D277A56ED5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B62A8BB-2C66-41B7-84C6-8BF32BF55B4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B62A8BB-2C66-41B7-84C6-8BF32BF55B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B62A8BB-2C66-41B7-84C6-8BF32BF55B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B62A8BB-2C66-41B7-84C6-8BF32BF55B4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A9AD4B9-E7B0-4C41-A1FB-ACE6978C56A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A9AD4B9-E7B0-4C41-A1FB-ACE6978C56A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A9AD4B9-E7B0-4C41-A1FB-ACE6978C56A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A9AD4B9-E7B0-4C41-A1FB-ACE6978C56A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +139,10 @@ Global
 		{ED8ABC20-143D-455F-8C0C-8A0D10C9EB09} = {7B03FC9D-2095-4EF4-AFAD-DF3183671D55}
 		{F97EF1A8-535F-4F04-BA9C-FC0D2D01D8A1} = {224DF6ED-FBFA-4B73-8020-A74CDEA110FB}
 		{DEC856A1-B6D1-420C-B920-1A03AFFDB11A} = {D27E4A66-00B6-4817-971D-E6C04B5E7689}
+		{7BC3D97D-279C-4196-B685-09C62765F316} = {9902A1E5-376F-45D3-A9E0-21B4C956CF20}
+		{374C9B67-E90C-460A-BE2C-2D277A56ED5A} = {7BC3D97D-279C-4196-B685-09C62765F316}
+		{1B62A8BB-2C66-41B7-84C6-8BF32BF55B4A} = {7BC3D97D-279C-4196-B685-09C62765F316}
+		{9A9AD4B9-E7B0-4C41-A1FB-ACE6978C56A6} = {7BC3D97D-279C-4196-B685-09C62765F316}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB5EFA9A-17BA-40F3-825E-582AADEBCC98}
