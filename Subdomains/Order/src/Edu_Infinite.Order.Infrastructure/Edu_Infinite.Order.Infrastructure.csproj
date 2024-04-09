@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+     <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="8.0.0" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Shared\Edu_Infinite.SharedKernel\Edu_Infinite.SharedKernel.csproj" />
+    <ProjectReference Include="..\Edu_Infinite.Order.Core\Edu_Infinite.Order.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -3,9 +3,14 @@ using Edu_Infinite.SharedKernel.Interfaces;
 
 namespace Edu_Infinite.Order.Core.Aggregates.Order
 {
-   public class OrderDefinition:BaseEntity<string>, IAggregateRoot
+   public class OrderDefinition : BaseEntity<Guid>, IAggregateRoot
    {
-        public Guid BasketId { get; set; }
-        public decimal TotalPrice { get; set; }
-    }
+      public OrderDefinition(Guid basketId)
+      {
+         BasketId = basketId;
+      }
+
+      public Guid BasketId { get; set; }
+      public decimal TotalPrice { get; set; }
+   }
 }

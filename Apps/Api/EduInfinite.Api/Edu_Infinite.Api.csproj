@@ -17,8 +17,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Subdomains\Course\src\Edu_Infinit.Course.Core\Edu_Infinite.Course.Core.csproj" />
-    <ProjectReference Include="..\..\..\Subdomains\Course\src\Edu_Infinite.Course.Infrastructure\Edu_Infinite.Course.Infrastructure.csproj" />
-    <ProjectReference Include="..\Edu_Infinite.Api.Shared\Edu_Infinite.Api.Shared.csproj" />
+     <ProjectReference Include="..\..\..\Subdomains\Course\src\Edu_Infinite.Course.Infrastructure\Edu_Infinite.Course.Infrastructure.csproj" />
+     <ProjectReference Include="..\..\..\Subdomains\Order\src\Edu_Infinite.Order.Infrastructure\Edu_Infinite.Order.Infrastructure.csproj" />
+     <ProjectReference Include="..\Edu_Infinite.Api.Shared\Edu_Infinite.Api.Shared.csproj" />
   </ItemGroup>
 
 </Project>
