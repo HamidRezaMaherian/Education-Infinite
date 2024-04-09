@@ -5,7 +5,6 @@ namespace Edu_Infinite.Api.Shared.Dtos.Course
 {
    public class CourseResponseDto
    {
-
       public string Name { get; set; }
       public string ShortDescription { get; set; }
       public string Description { get; set; }

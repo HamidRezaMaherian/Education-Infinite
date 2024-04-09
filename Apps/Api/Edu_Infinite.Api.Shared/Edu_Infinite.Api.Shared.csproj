@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Subdomains\Course\src\Edu_Infinit.Course.Core\Edu_Infinite.Course.Core.csproj" />
+    <ProjectReference Include="..\..\..\Subdomains\Order\src\Edu_Infinite.Order.Core\Edu_Infinite.Order.Core.csproj" />
   </ItemGroup>
 
 </Project>

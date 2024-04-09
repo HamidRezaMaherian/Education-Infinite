@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.RegisterCourseApp();
 builder.Services.RegisterOrderApp();
-builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(Edu_Infinite.Api.Shared.Mappers.APIMapperProfile)));
+builder.Services.AddAutoMapper(Assembly.GetAssembly(typeof(Edu_Infinite.Api.Shared.Mappers.CourseMapperProfile)));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
