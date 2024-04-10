@@ -2,8 +2,8 @@
 
 namespace Edu_Infinite.SharedKernel
 {
-	public interface IEntityEventPublisher<T> where T : BaseEntity
-	{
-		void SaveAndPublish(T entity);
-	}
+   public interface IEntityEventPublisher
+   {
+      Task Publish<T>(T entity) where T : BaseEntity;
+   }
 }

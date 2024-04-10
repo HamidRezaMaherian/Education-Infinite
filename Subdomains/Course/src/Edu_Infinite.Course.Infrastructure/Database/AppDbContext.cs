@@ -12,7 +12,7 @@ namespace Edu_Infinite.Course.Infrastructure.Database
 {
 	internal class CourseAppDbContext : DbContext
 	{
-		public CourseAppDbContext(DbContextOptions options) : base(options)
+		public CourseAppDbContext(DbContextOptions<CourseAppDbContext> options) : base(options)
 		{
 		}
 

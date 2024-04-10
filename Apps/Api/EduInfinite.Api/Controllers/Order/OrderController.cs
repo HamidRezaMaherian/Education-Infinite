@@ -1,9 +1,11 @@
 ﻿
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
+using Ardalis.Specification;
 using AutoMapper;
 using Edu_Infinite.Api.Shared.Dtos.Order;
 using Edu_Infinite.Order.Core.Aggregates.Order;
+using Edu_Infinite.SharedKernel;
 using Edu_Infinite.SharedKernel.Interfaces;
 using Edu_Infinite.SharedKernel.Specifications;
 using Microsoft.AspNetCore.Mvc;
@@ -15,9 +17,9 @@ namespace Edu_Infinite.Api.Controllers.Order
    [ApiController]
    public class OrderController : ControllerBase
    {
-      private readonly IRepository<OrderDefinition> _repo;
+      private readonly IQueryRepository<OrderDefinition> _repo;
       private readonly IMapper _mapper;
-      public OrderController(IRepository<OrderDefinition> repo, IMapper mapper)
+      public OrderController(IQueryRepository<OrderDefinition> repo, IMapper mapper)
       {
          _repo = repo;
          _mapper = mapper;
