@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using IdentityModel;
 using IdentityServerAspNetIdentity.Data;
-using IdentityServerAspNetIdentity.Models;
+using Edu_Infinite.Identity.Shared;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
