@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Edu_Infinite.SharedKernel
 {
-   public interface ITransactionRequest<TResult> : IRequest<TResult>
+   public interface ITransactionRequest<TResult> : IRequest<TransactionResult<TResult>> where TResult : BaseEntity
    {
    }
    public interface ITransactionRequest : IRequest

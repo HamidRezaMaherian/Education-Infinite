@@ -15,9 +15,9 @@ namespace Edu_Infinite.Course.Infrastructure.Services
       {
          foreach (var item in entity.Events)
          {
-            if (item is ITransactionRequest<TransactionResult<T>>)
+            if (item is ITransactionRequest<T>)
             {
-               var res = await mediator.Send((item as ITransactionRequest<TransactionResult<T>>)!);
+               var res = await mediator.Send((item as ITransactionRequest<T>)!);
                if (res.IsSuccessfull)
                {
                   mediator.Publish(res.Model);

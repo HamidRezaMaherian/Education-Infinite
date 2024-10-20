@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Edu_Infinite.Course.Infrastructure.Handlers
 {
-   internal class CourseSavedEventHandler : IRequestHandler<CourseSavedEvent, TransactionResult<CourseDefinition>>
+   internal class CourseSavedEventHandler : IRequestHandler<EntitySavedEvent<CourseDefinition>, TransactionResult<CourseDefinition>>
    {
       private readonly IRepository<CourseDefinition> repository;
 
@@ -15,10 +15,11 @@ namespace Edu_Infinite.Course.Infrastructure.Handlers
       {
          this.repository = provider.CreateScope().ServiceProvider.GetService<IRepository<CourseDefinition>>()!;
       }
-      public async Task<TransactionResult<CourseDefinition>> Handle(CourseSavedEvent request, CancellationToken cancellationToken)
+      public async Task<TransactionResult<CourseDefinition>> Handle(EntitySavedEvent<CourseDefinition> request, CancellationToken cancellationToken)
       {
          var transactionRes = new TransactionResult<CourseDefinition>();
-         transactionRes.Model = await repository.AddAsync(request.Course, cancellationToken);
+         transactionRes.Model = await repository.AddAsync(request.Entity, cancellationToken);
+         transactionRes.IsSuccessfull = true;
          return transactionRes;
       }
    }

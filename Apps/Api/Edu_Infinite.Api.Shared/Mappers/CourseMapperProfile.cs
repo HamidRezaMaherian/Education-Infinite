@@ -17,6 +17,7 @@ namespace Edu_Infinite.Api.Shared.Mappers
       public CourseMapperProfile()
       {
          CreateMap<CourseResponseDto, CourseDefinition>().ReverseMap()
+         .ForMember(i => i.CategoryName, cfg => cfg.MapFrom(i => i.Category.Name))
          .ForMember(i => i.IntroVideo, (cfg) => cfg.MapFrom(i => i.IntroVideo.ToString()))
          .ForMember(i => i.MainImage, (cfg) => cfg.MapFrom(i => i.MainImage.ToString()));
 

@@ -57,7 +57,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Order.Applicat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Order.Infrastructure", "Subdomains\Order\src\Edu_Infinite.Order.Infrastructure\Edu_Infinite.Order.Infrastructure.csproj", "{9A9AD4B9-E7B0-4C41-A1FB-ACE6978C56A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu_Infinite.Identity.Shared", "Subdomains\Identity\Edu_Infinite.Identity.Shared\Edu_Infinite.Identity.Shared.csproj", "{FC0B9E22-E5FF-4B91-B40C-8A7AB15BF7CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edu_Infinite.Identity.Shared", "Subdomains\Identity\Edu_Infinite.Identity.Shared\Edu_Infinite.Identity.Shared.csproj", "{FC0B9E22-E5FF-4B91-B40C-8A7AB15BF7CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

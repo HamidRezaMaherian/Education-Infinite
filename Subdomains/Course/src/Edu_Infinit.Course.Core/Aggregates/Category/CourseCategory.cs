@@ -20,5 +20,11 @@ namespace Edu_Infinit.Course.Core.Aggregates.Category
 		public Guid? ParentId { get; private set; }
 		public ICollection<CourseDefinition> Courses { get; private set; }
 		public ICollection<CourseCategory> SubCategories { get; private set; }
-	}
+
+      public void SaveCourse()
+      {
+         _validator.Validate(this);
+         _events.Add(new EntitySavedEvent<CourseCategory>(this));
+      }
+   }
 }

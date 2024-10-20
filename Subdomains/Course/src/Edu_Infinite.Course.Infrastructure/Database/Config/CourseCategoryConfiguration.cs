@@ -10,7 +10,7 @@ namespace Edu_Infinite.Course.Infrastructure.Database.Config
 		{
 			base.Configure(builder);
 			builder.Property(i => i.Name).IsRequired().HasMaxLength(200);
-			builder.HasMany(i => i.Courses).WithOne().HasForeignKey(i => i.CategoryId).IsRequired();
+			builder.HasMany(i => i.Courses).WithOne(i=>i.Category).HasForeignKey(i => i.CategoryId).IsRequired();
 			builder.HasOne<CourseCategory>()
 				.WithMany(i=>i.SubCategories)
 				.HasForeignKey(i => i.ParentId)

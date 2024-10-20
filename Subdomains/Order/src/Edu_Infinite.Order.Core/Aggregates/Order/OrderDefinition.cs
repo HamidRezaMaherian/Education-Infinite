@@ -12,5 +12,10 @@ namespace Edu_Infinite.Order.Core.Aggregates.Order
 
       public Guid BasketId { get; set; }
       public decimal TotalPrice { get; set; }
+
+      public void SaveCourse()
+      {
+         _events.Add(new EntitySavedEvent<OrderDefinition>(this));
+      }
    }
 }

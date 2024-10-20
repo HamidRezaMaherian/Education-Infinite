@@ -12,16 +12,17 @@ namespace Edu_Infinite.Course.Infrastructure.Database
 {
 	internal class CourseAppDbContext : DbContext
 	{
-		public CourseAppDbContext(DbContextOptions<CourseAppDbContext> options) : base(options)
-		{
-		}
-
 		public DbSet<CourseDefinition> Courses { get; set; }
 		public DbSet<CourseCategory> Categories { get; set; }
 		public DbSet<CourseContent> Contents { get; set; }
 		public DbSet<CourseSection> Sections { get; set; }
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+      protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+      {
+			optionsBuilder.UseSqlServer("Server=.;Database=edu_infinit_db;Trusted_Connection=True;Trust Server Certificate=true");
+      }
+
+      protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Ignore<BaseDomainEvent>();
 			modelBuilder.Ignore<Blob>();

@@ -4,6 +4,7 @@ using Edu_Infinite.Course.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Edu_Infinite.Course.Infrastructure.Migrations
 {
     [DbContext(typeof(CourseAppDbContext))]
-    partial class CourseAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240411112719_AddSectionRelation")]
+    partial class AddSectionRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -193,13 +196,11 @@ namespace Edu_Infinite.Course.Infrastructure.Migrations
 
             modelBuilder.Entity("Edu_Infinite.Course.Core.Aggregates.Course.CourseDefinition", b =>
                 {
-                    b.HasOne("Edu_Infinit.Course.Core.Aggregates.Category.CourseCategory", "Category")
+                    b.HasOne("Edu_Infinit.Course.Core.Aggregates.Category.CourseCategory", null)
                         .WithMany("Courses")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("Edu_Infinite.Course.Core.Aggregates.Course.CourseSection", b =>

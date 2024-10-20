@@ -10,5 +10,5 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course.Validators
 			RuleFor(i => i.Id).NotEmpty();
 			RuleFor(i => i.Name).NotEmpty().MaximumLength(200);
 		}
-	}
+   }
 }

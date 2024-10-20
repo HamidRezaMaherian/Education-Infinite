@@ -6,21 +6,26 @@ using FluentValidation;
 
 namespace Edu_Infinite.Course.Core.Aggregates.Course
 {
-	public class CourseContent : BaseEntity<int>
-	{
-		private readonly CourseContentValidator _validator = new();
-		public CourseContent(string title, ContentType type, Blob content)
-		{
-			Title = title;
-			Type = type;
-			Content = content;
-			_validator.ValidateAndThrow(this);
-		}
+   public class CourseContent : BaseEntity<int>
+   {
+      private readonly CourseContentValidator _validator = new();
+      public CourseContent(string title, ContentType type, Blob content)
+      {
+         Title = title;
+         Type = type;
+         Content = content;
+         _validator.ValidateAndThrow(this);
+      }
+      public CourseContent(int sectionId, string title, ContentType type, Blob content) : this(title, type, content)
+      {
+         SectionId = sectionId;
+      }
 
-		public string Title { get; private set; }
-		public ContentType Type { get; private set; }
-		public Blob Content { get; private set; }
-		public int SectionId { get; private set; }
 
-	}
+      public string Title { get; private set; }
+      public ContentType Type { get; private set; }
+      public Blob Content { get; private set; }
+      public int SectionId { get; internal set; }
+
+   }
 }

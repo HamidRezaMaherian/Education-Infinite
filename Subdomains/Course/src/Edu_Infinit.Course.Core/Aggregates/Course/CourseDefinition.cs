@@ -5,6 +5,7 @@ using Edu_Infinite.SharedKernel.Interfaces;
 using Edu_Infinite.SharedKernel.ValueObjects;
 using FluentValidation;
 using Edu_Infinite.Course.Core.Aggregates.Course.Events;
+using Edu_Infinit.Course.Core.Aggregates.Category;
 
 namespace Edu_Infinite.Course.Core.Aggregates.Course
 {
@@ -42,6 +43,7 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
       public Guid CategoryId { get; private set; }
 
       public SkillLevel Level { get; private set; }
+      public CourseCategory Category { get; private set; }
 
       private IList<CourseSection> _sections;
       public ICollection<CourseSection> Sections => _sections.AsReadOnly();
@@ -86,7 +88,7 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
       public void SaveCourse()
       {
          _valiator.Validate(this);
-         _events.Add(new CourseSavedEvent(this));
+         _events.Add(new EntitySavedEvent<CourseDefinition>(this));
       }
    }
 }

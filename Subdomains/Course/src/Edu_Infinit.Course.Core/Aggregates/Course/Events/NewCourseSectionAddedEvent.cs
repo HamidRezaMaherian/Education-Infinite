@@ -2,7 +2,7 @@
 
 namespace Edu_Infinite.Course.Core.Aggregates.Course.Events
 {
-   public class NewCourseSectionAddedEvent : BaseDomainEvent, ITransactionRequest
+   public class NewCourseSectionAddedEvent : BaseDomainEvent, ITransactionRequest<CourseSection>
    {
       public CourseSection Section { get; private set; }
       public Guid CourseId { get; private set; }

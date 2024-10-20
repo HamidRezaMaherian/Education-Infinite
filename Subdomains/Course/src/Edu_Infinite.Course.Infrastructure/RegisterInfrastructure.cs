@@ -28,6 +28,16 @@ namespace Edu_Infinite.Course.Infrastructure
          services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
          services.AddScoped(typeof(IQueryRepository<>), typeof(EfRepository<>));
          services.AddSingleton(typeof(IEntityEventPublisher), typeof(CourseEntityEventPublisher));
+         services.BuildServiceProvider().MigrateDatabase();
       }
+      private static void MigrateDatabase(this IServiceProvider services)
+      {
+         var dbContext = services.CreateScope().ServiceProvider.GetService<CourseAppDbContext>();
+         if ((dbContext!.Database.GetPendingMigrations()).Any())
+         {
+            dbContext!.Database.Migrate();
+         }
+      }
+
    }
 }

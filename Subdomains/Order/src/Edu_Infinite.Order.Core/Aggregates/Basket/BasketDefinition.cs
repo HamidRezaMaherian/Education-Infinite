@@ -8,6 +8,11 @@ namespace Edu_Infinite.Order.Core.Aggregates.Basket
       public ICollection<BasketItem> Items { get; private set; }
       public decimal TotalPrice { get; private set; }
 
+
       //TODO:Coupons
+      public void SaveCourse()
+      {
+         _events.Add(new EntitySavedEvent<BasketDefinition>(this));
+      }
    }
 }

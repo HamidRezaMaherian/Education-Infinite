@@ -11,7 +11,7 @@ namespace Edu_Infinite.SharedKernel.Specifications
    {
       public BasePaginationSpec(int pageNumber, int pageSize)
       {
-         Query.Skip((pageNumber - 1) * pageSize).Take(pageSize).Where(i=>i.IsActive);
+         Query.Where(i => i.IsActive).Skip((pageNumber - 1) * pageSize).Take(pageSize);
       }
    }
 }

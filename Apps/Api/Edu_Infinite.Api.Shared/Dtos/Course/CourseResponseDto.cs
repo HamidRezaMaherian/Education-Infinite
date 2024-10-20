@@ -11,7 +11,7 @@ namespace Edu_Infinite.Api.Shared.Dtos.Course
       public decimal FullPrice { get; set; }
       public string MainImage { get; set; }
       public string IntroVideo { get; set; }
-      public Guid CategoryId { get; set; }
+      public string CategoryName { get; set; }
       public SkillLevel Level { get; set; }
    }
 }

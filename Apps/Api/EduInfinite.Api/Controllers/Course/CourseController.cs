@@ -2,6 +2,7 @@
 using AutoMapper;
 using Edu_Infinite.Api.Shared.Dtos.Course;
 using Edu_Infinite.Course.Core.Aggregates.Course;
+using Edu_Infinite.Course.Core.Specs;
 using Edu_Infinite.SharedKernel;
 using Edu_Infinite.SharedKernel.Interfaces;
 using Edu_Infinite.SharedKernel.Specifications;
@@ -12,7 +13,7 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace Edu_Infinite.Api.Controllers.Course
 {
-    [Route("api/[controller]/[action]")]
+   [Route("api/[controller]/[action]")]
    [ApiController]
    public class CourseController : ControllerBase
    {
@@ -32,7 +33,7 @@ namespace Edu_Infinite.Api.Controllers.Course
       [ProducesResponseType(400)]
       public async Task<IActionResult> Filter([FromQuery] CourseFilterReqDto reqDto)
       {
-         var queryRes = await _repo.ListAsync(new BasePaginationSpec<CourseDefinition>(reqDto.PageNumber, reqDto.PageSize));
+         var queryRes = await _repo.ListAsync(new CourseListFilterSpec(reqDto.PageNumber, reqDto.PageSize));
          var apiRes = _mapper.Map<List<CourseResponseDto>>(queryRes);
          return Ok(apiRes);
       }
@@ -44,6 +45,34 @@ namespace Edu_Infinite.Api.Controllers.Course
       {
          var courseDefinition = _mapper.Map<CourseDefinition>(reqDto);
          courseDefinition.SaveCourse();
+         await eventPublisher.Publish(courseDefinition);
+         return Ok();
+      }
+      [HttpPost]
+      [SwaggerOperation(Summary = "add course section for course")]
+      [ProducesResponseType(200)]
+      [ProducesResponseType(400)]
+      public async Task<IActionResult> AddSection([FromBody] AddCourseSectionDto reqDto)
+      {
+         var courseDefinition = await _repo.GetByIdAsync(reqDto.CourseId);
+         if (courseDefinition is null)
+            return BadRequest("course not found");
+         foreach (var sectionName in reqDto.SectionNames)
+            courseDefinition.AddSection(new CourseSection(sectionName));
+         await eventPublisher.Publish(courseDefinition);
+         return Ok();
+      }
+      [HttpPost]
+      [SwaggerOperation(Summary = "add course section for course")]
+      [ProducesResponseType(200)]
+      [ProducesResponseType(400)]
+      public async Task<IActionResult> AddContent([FromBody] AddCourseContentDto reqDto)
+      {
+         var courseDefinition = await _repo.GetByIdAsync(reqDto.CourseId);
+         if (courseDefinition is null)
+            return BadRequest("course not found");
+         foreach (var sectionName in reqDto.SectionNames)
+            courseDefinition.AddSection(new CourseSection(sectionName));
          await eventPublisher.Publish(courseDefinition);
          return Ok();
       }
