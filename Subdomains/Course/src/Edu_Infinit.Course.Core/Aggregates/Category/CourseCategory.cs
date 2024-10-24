@@ -6,20 +6,21 @@ using FluentValidation;
 
 namespace Edu_Infinit.Course.Core.Aggregates.Category
 {
-	public class CourseCategory : BaseEntity<Guid>, IAggregateRoot
-	{
-		private readonly CourseCategoryValidator _validator = new();
-		public CourseCategory(string name, Guid? parentId)
-		{
-			Name = name;
-			ParentId = parentId;
-			_validator.ValidateAndThrow(this);
-		}
+   public class CourseCategory : BaseEntity<Guid>, IAggregateRoot
+   {
+      private readonly CourseCategoryValidator _validator = new();
+      public CourseCategory(Guid id, string name, Guid? parentId)
+      {
+         Id = id;
+         Name = name;
+         ParentId = parentId;
+         _validator.ValidateAndThrow(this);
+      }
 
-		public string Name { get; private set; }
-		public Guid? ParentId { get; private set; }
-		public ICollection<CourseDefinition> Courses { get; private set; }
-		public ICollection<CourseCategory> SubCategories { get; private set; }
+      public string Name { get; private set; }
+      public Guid? ParentId { get; private set; }
+      public ICollection<CourseDefinition> Courses { get; private set; }
+      public ICollection<CourseCategory> SubCategories { get; private set; }
 
       public void SaveCourse()
       {

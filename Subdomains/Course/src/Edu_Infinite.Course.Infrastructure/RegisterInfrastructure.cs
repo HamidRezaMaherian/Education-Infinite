@@ -25,14 +25,14 @@ namespace Edu_Infinite.Course.Infrastructure
             cfg.RegisterServicesFromAssembly(typeof(RegisterInfrastructure).Assembly);
             cfg.RegisterServicesFromAssembly(typeof(CourseDefinition).Assembly);
          });
-         services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
-         services.AddScoped(typeof(IQueryRepository<>), typeof(EfRepository<>));
          services.AddSingleton(typeof(IEntityEventPublisher), typeof(CourseEntityEventPublisher));
-         services.RegisterCustomRepos();
+         services.RegisterRepos();
          services.BuildServiceProvider().MigrateDatabase();
       }
-      private static void RegisterCustomRepos(this IServiceCollection services)
+      private static void RegisterRepos(this IServiceCollection services)
       {
+         services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+         services.AddScoped(typeof(IQueryRepository<>), typeof(EfRepository<>));
          services.AddScoped<ICourseRepository,CourseRepository>();
       }
       private static void MigrateDatabase(this IServiceProvider services)

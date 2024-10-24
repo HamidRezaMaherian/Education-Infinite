@@ -9,7 +9,7 @@ namespace Edu_Infinite.Course.Infrastructure.Database.Repositories
    {
       private readonly DbContext dbContext;
 
-      public CourseRepository(DbContext dbContext) : base(dbContext)
+      public CourseRepository(CourseAppDbContext dbContext) : base(dbContext)
       {
          this.dbContext = dbContext;
       }
