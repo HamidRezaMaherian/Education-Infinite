@@ -10,7 +10,7 @@ namespace Edu_Infinite.Apps.Web.Host
          // Add services to the container.
          builder.Services.AddRazorPages();
          builder.Services.AddRazorComponents().AddInteractiveWebAssemblyComponents();
-         builder.Services.ConfigureServices();  
+         builder.Services.ConfigureWebAppServices();  
          builder.Services.AddBff();
 
          builder.Services.AddAuthentication(options =>

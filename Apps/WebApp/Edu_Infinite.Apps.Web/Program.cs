@@ -12,11 +12,11 @@ namespace Edu_Infinite.Apps.Web
       public static async Task Main(string[] args)
       {
          var builder = WebAssemblyHostBuilder.CreateDefault(args);
-         //builder.RootComponents.Add<App>("#app");
-         builder.Services.ConfigureServices();
+         builder.RootComponents.Add<App>("#app");
+         builder.Services.ConfigureWebAppServices();
          await builder.Build().RunAsync();
       }
-      public static void ConfigureServices(this IServiceCollection services)
+      public static void ConfigureWebAppServices(this IServiceCollection services)
       {
          services.AddHttpClient("backend", client => client.BaseAddress = new Uri("https://localhost:7068"))
                 .AddHttpMessageHandler<AntiforgeryHandler>();

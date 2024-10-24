@@ -1,9 +1,8 @@
-﻿using Edu_Infinite.Course.Core.Aggregates.Course;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace Edu_Infinite.Course.Core.Aggregates.Course.Validators
 {
-	internal class CourseSectionValidator : AbstractValidator<CourseSection>
+   internal class CourseSectionValidator : AbstractValidator<CourseSection>
 	{
 		public CourseSectionValidator()
 		{

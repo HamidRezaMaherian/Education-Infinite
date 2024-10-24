@@ -1,5 +1,5 @@
 ﻿using Edu_Infinite.Course.Core.Aggregates.Course;
-using Edu_Infinite.Course.Core.Aggregates.Course.Events;
+using Edu_Infinite.Course.Core.Interfaces;
 using Edu_Infinite.SharedKernel;
 using Edu_Infinite.SharedKernel.Interfaces;
 using MediatR;
@@ -9,11 +9,11 @@ namespace Edu_Infinite.Course.Infrastructure.Handlers
 {
    internal class CourseSavedEventHandler : IRequestHandler<EntitySavedEvent<CourseDefinition>, TransactionResult<CourseDefinition>>
    {
-      private readonly IRepository<CourseDefinition> repository;
+      private readonly ICourseRepository repository;
 
       public CourseSavedEventHandler(IServiceProvider provider)
       {
-         this.repository = provider.CreateScope().ServiceProvider.GetService<IRepository<CourseDefinition>>()!;
+         this.repository = provider.CreateScope().ServiceProvider.GetService<ICourseRepository>()!;
       }
       public async Task<TransactionResult<CourseDefinition>> Handle(EntitySavedEvent<CourseDefinition> request, CancellationToken cancellationToken)
       {

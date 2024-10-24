@@ -2,16 +2,16 @@
 using Edu_Infinite.Apps.Web.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace Edu_Infinite.Apps.Web.Pages
+namespace Edu_Infinite.Apps.Web.Pages.Course
 {
-   public partial class CourseList
+   public partial class List
    {
       [Inject]
       private CourseClientService ClientService { get; set; }
-      public ICollection<CourseResponseDto> Courses { get; set; }
+      public IEnumerable<CourseResponseDto> Courses { get; set; } = [];
       protected override async Task OnInitializedAsync()
       {
-         Courses=await ClientService.SearchCoursesByFilter(new CourseFilterReqDto() { PageNumber = 1 ,PageSize=2});
+         Courses = await ClientService.SearchCoursesByFilter(new CourseFilterReqDto() { PageNumber = 1, PageSize = 10 });
          await base.OnInitializedAsync();
       }
    }

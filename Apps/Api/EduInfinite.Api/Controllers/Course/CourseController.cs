@@ -7,6 +7,7 @@ using Edu_Infinite.SharedKernel;
 using Edu_Infinite.SharedKernel.Interfaces;
 using Edu_Infinite.SharedKernel.Specifications;
 using Microsoft.AspNetCore.Mvc;
+using SharpGrip.FluentValidation.AutoValidation.Mvc.Attributes;
 using Swashbuckle.AspNetCore.Annotations;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -31,7 +32,7 @@ namespace Edu_Infinite.Api.Controllers.Course
       [SwaggerOperation(Summary = "filter courses with pagination")]
       [ProducesResponseType(200)]
       [ProducesResponseType(400)]
-      public async Task<IActionResult> Filter([FromQuery] CourseFilterReqDto reqDto)
+      public async Task<ActionResult<CourseResponseDto>> Filter([FromQuery] CourseFilterReqDto reqDto)
       {
          var queryRes = await _repo.ListAsync(new CourseListFilterSpec(reqDto.PageNumber, reqDto.PageSize));
          var apiRes = _mapper.Map<List<CourseResponseDto>>(queryRes);

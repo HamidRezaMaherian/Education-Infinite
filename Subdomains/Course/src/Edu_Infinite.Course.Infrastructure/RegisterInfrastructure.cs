@@ -1,5 +1,5 @@
-﻿using Ardalis.Specification;
-using Edu_Infinite.Course.Core.Aggregates.Course;
+﻿using Edu_Infinite.Course.Core.Aggregates.Course;
+using Edu_Infinite.Course.Core.Interfaces;
 using Edu_Infinite.Course.Infrastructure.Database;
 using Edu_Infinite.Course.Infrastructure.Database.Repositories;
 using Edu_Infinite.Course.Infrastructure.Services;
@@ -28,7 +28,12 @@ namespace Edu_Infinite.Course.Infrastructure
          services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
          services.AddScoped(typeof(IQueryRepository<>), typeof(EfRepository<>));
          services.AddSingleton(typeof(IEntityEventPublisher), typeof(CourseEntityEventPublisher));
+         services.RegisterCustomRepos();
          services.BuildServiceProvider().MigrateDatabase();
+      }
+      private static void RegisterCustomRepos(this IServiceCollection services)
+      {
+         services.AddScoped<ICourseRepository,CourseRepository>();
       }
       private static void MigrateDatabase(this IServiceProvider services)
       {

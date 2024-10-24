@@ -8,12 +8,8 @@ using System.Reflection;
 
 namespace Edu_Infinite.Order.Infrastructure.Database
 {
-   internal class OrderAppDbContext : DbContext
+   internal class OrderAppDbContext(DbContextOptions<OrderAppDbContext> options) : DbContext(options)
    {
-      public OrderAppDbContext(DbContextOptions options) : base(options)
-      {
-      }
-
       public DbSet<OrderDefinition> Orders { get; set; }
       public DbSet<BasketDefinition> Baskets { get; set; }
       public DbSet<BasketItem> BasketItems { get; set; }

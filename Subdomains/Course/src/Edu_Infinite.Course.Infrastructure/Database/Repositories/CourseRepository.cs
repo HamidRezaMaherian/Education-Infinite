@@ -2,7 +2,6 @@
 using Edu_Infinite.Course.Core.Aggregates.Course;
 using Edu_Infinite.Course.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using static System.Collections.Specialized.BitVector32;
 
 namespace Edu_Infinite.Course.Infrastructure.Database.Repositories
 {
