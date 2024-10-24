@@ -12,7 +12,7 @@ namespace Edu_Infinite.Course.Infrastructure.Database.Config
       {
          base.Configure(builder);
          builder.Property(i => i.Name).IsRequired().HasMaxLength(200);
-         builder.Property(i => i.FullPrice).HasPrecision(3).IsRequired();
+         builder.Property(i => i.FullPrice).HasPrecision(10).IsRequired();
          builder.HasOne(i=>i.Category).WithMany(i => i.Courses).HasForeignKey(i => i.CategoryId).IsRequired();
          builder.Property(i => i.CreatedDateTime).IsRequired();
          builder.Property(i => i.Description).IsRequired();
