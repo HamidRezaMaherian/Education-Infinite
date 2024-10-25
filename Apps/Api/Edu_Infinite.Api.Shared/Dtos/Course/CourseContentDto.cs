@@ -1,4 +1,4 @@
-﻿using Edu_Infinit.Course.Core.Constants;
+﻿using Edu_Infinite.Api.Shared.Constants;
 using Edu_Infinite.SharedKernel.ValueObjects;
 
 namespace Edu_Infinite.Api.Shared.Dtos.Course

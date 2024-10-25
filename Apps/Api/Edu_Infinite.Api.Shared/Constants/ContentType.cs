@@ -1,4 +1,4 @@
-﻿namespace Edu_Infinit.Course.Core.Constants
+﻿namespace Edu_Infinite.Api.Shared.Constants
 {
 	public enum ContentType
 	{
