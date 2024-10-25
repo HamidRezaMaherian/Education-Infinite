@@ -1,12 +1,10 @@
-﻿using Edu_Infinit.Course.Core.Aggregates.Category;
-using Edu_Infinite.Course.Core.Aggregates.Course;
+﻿using Edu_Infinite.Course.Core.Aggregates.Course;
 using Edu_Infinite.Course.Infrastructure.Database.ValueGenerators;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Edu_Infinite.Course.Infrastructure.Database.Config
 {
-   internal class CourseDefinitionConfiguration : BaseConfiguration<CourseDefinition, Guid>
+	internal class CourseDefinitionConfiguration : BaseConfiguration<CourseDefinition, Guid>
    {
       public override void Configure(EntityTypeBuilder<CourseDefinition> builder)
       {

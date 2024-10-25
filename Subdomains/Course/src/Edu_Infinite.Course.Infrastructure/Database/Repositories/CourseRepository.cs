@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Edu_Infinite.Course.Infrastructure.Database.Repositories
 {
-   internal class CourseRepository : RepositoryBase<CourseDefinition>, ICourseRepository
+   internal class CourseRepository : EfRepository<CourseDefinition>, ICourseRepository
    {
       private readonly DbContext dbContext;
 

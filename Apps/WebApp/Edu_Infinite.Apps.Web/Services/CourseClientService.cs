@@ -15,13 +15,17 @@ namespace Edu_Infinite.Apps.Web.Services
 
       }
 
-      public Task<ICollection<CourseResponseDto>> SearchCoursesByFilter(CourseFilterReqDto filterReqDto)
-      {
-         var request = new RestRequest("/api/Course/Filter");
-         foreach (var prop in typeof(CourseFilterReqDto).GetProperties())
-            request.AddQueryParameter(prop.Name, prop.GetValue(filterReqDto)!.ToString());
-         return _client.GetAsync<ICollection<CourseResponseDto>>(request);
-         //return httpRes.Content.rea;
-      }
-   }
+		public Task<ICollection<CourseDefinitionDto>> SearchCoursesByFilter(CourseFilterReqDto filterReqDto)
+		{
+			var request = new RestRequest("/api/Course/Filter");
+			foreach (var prop in typeof(CourseFilterReqDto).GetProperties())
+				request.AddQueryParameter(prop.Name, prop.GetValue(filterReqDto)!.ToString());
+			return _client.GetAsync<ICollection<CourseDefinitionDto>>(request);
+		}
+		public Task<CourseDetailsDto> GetCourseFullInfo(string id)
+		{
+			var request = new RestRequest($"/api/Course/GetById/{id}");
+			return _client.GetAsync<CourseDetailsDto>(request);
+		}
+	}
 }

@@ -1,5 +1,5 @@
 ﻿@layout Layout.CourseLayout
-@page "/courses/details/{Id:int}"
+@page "/courses/details/{Id}"
 
 <section data-anim="fade" class="breadcrumbs ">
 	<div class="container">
@@ -53,14 +53,14 @@
 						</div>
 
 						<div data-anim="slide-up delay-1">
-							<h1 class="text-30 lh-14 pl-60 lg:pl-0 ff-estedad">آموزش رایگان Blazor WebAssembly</h1>
+							<h1 class="text-30 lh-14 pl-60 lg:pl-0 ff-estedad">@CourseDetails.Definition.Name</h1>
 						</div>
 
-						<p class="col-xl-9 mt-20">از XD برای استخدام در طراحی UI، رابط کاربری، طراحی تجربه کاربری، طراحی UX و طراحی وب استفاده کنید.</p>
+						<p class="col-xl-9 mt-20">@CourseDetails.Definition.ShortDescription</p>
 
 						<div class="d-flex x-gap-30 y-gap-10 items-center flex-wrap pt-20">
 							<div class="d-flex items-center">
-								<div class="text-14 lh-1 text-yellow-1 ml-10">4.5</div>
+								<div class="text-14 lh-1 text-yellow-1 ml-10">@CourseDetails.Definition.Rate</div>
 								<div class="d-flex x-gap-5 items-center">
 									<div class="icon-star text-11 text-yellow-1"></div>
 									<div class="icon-star text-11 text-yellow-1"></div>
@@ -93,9 +93,9 @@
 					<div class="courses-single-info js-pin-content">
 						<div class="bg-white shadow-2 rounded-8 border-light py-10 px-10">
 							<div class="relative">
-								<img class="w-1/1" src="img/misc/1.png" alt="image">
+								<img class="w-1/1" src="@CourseDetails.Definition.MainImage" alt="@CourseDetails.Definition.Name">
 								<div class="absolute-full-center d-flex justify-center items-center">
-									<a href="https://www.aparat.com/video/video/embed/videohash/y5iTg/vt/frame" class="d-flex justify-center items-center size-60 rounded-full bg-white js-gallery" data-gallery="gallery1">
+									<a href="@CourseDetails.Definition.IntroVideo" class="d-flex justify-center items-center size-60 rounded-full bg-white js-gallery" data-gallery="gallery1">
 										<div class="icon-play text-18"></div>
 									</a>
 								</div>
@@ -103,7 +103,7 @@
 
 							<div class="courses-single-info__content scroll-bar-1 pt-30 pb-20 px-20">
 								<div class="d-flex justify-between items-center mb-30">
-									<div class="text-24 lh-1 text-dark-1 fw-500">96000 تومان</div>
+									<div class="text-24 lh-1 text-dark-1 fw-500">@CourseDetails.Definition.FullPrice تومان</div>
 									<div class="lh-1 line-through">7600 تومان</div>
 								</div>
 
@@ -119,16 +119,16 @@
 											<div class="icon-video-file"></div>
 											<div class="mr-10">دوره</div>
 										</div>
-										<div>20</div>
+										<div>@CourseDetails.Sections.Count()</div>
 									</div>
 
-									<div class="d-flex justify-between py-8 border-top-light">
+									@* <div class="d-flex justify-between py-8 border-top-light">
 										<div class="d-flex items-center text-dark-1">
 											<div class="icon-puzzle"></div>
 											<div class="mr-10">امتحانات</div>
 										</div>
 										<div>3</div>
-									</div>
+									</div> *@
 
 									<div class="d-flex justify-between py-8 border-top-light">
 										<div class="d-flex items-center text-dark-1">
@@ -143,7 +143,7 @@
 											<div class="icon-bar-chart-2"></div>
 											<div class="mr-10">سطح</div>
 										</div>
-										<div>مقدماتی</div>
+										<div>@CourseDetails.Definition.Level</div>
 									</div>
 
 									<div class="d-flex justify-between py-8 border-top-light">
@@ -219,11 +219,7 @@
 						<div class="show-more mt-30 js-show-more">
 							<div class="show-more__content">
 								<p class="">
-									در این آموزش عملی، شما یاد خواهید گرفت که با این بسته دوره آموزشی نهایی که شامل 12 دوره بازاریابی دیجیتال در یک پکیج است، یک متخصص بازاریابی دیجیتال شوید!
-									<br><br>
-									اگر می‌خواهید مهارت‌هایی را که باید در برنامه درسی دوره بازاریابی دیجیتال در هند یا هر جای دیگر جهان پوشش داده شود، بیابید، خواندن این وبلاگ به شما کمک خواهد کرد. قبل از اینکه به موارد پیشرفته بپردازیم دوره دیجیتال مارکتینگ برنامه درسی، بیایید به حوزه بازاریابی دیجیتال و آینده نگاه کنیم.
-									<br><br>
-									ما تمرکز زیادی بر درک روانشناسی رفتاری و محرک های تأثیرگذاری داریم که برای تبدیل شدن به یک بازاریاب دیجیتالی خوب بسیار مهم هستند. ما می‌دانیم که تئوری برای ایجاد یک پایه محکم مهم است، می‌دانیم که تئوری به تنهایی کار را انجام نمی‌دهد، به همین دلیل این دوره مملو از مثال‌های عملی است که می‌توانید قدم به قدم دنبال کنید.
+									@CourseDetails.Definition.Description
 								</p>
 							</div>
 

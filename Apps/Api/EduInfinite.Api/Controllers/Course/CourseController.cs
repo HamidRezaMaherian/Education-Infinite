@@ -28,17 +28,28 @@ namespace Edu_Infinite.Api.Controllers.Course
          _mapper = mapper;
          this.eventPublisher = eventPublisher;
       }
-      [HttpGet]
-      [SwaggerOperation(Summary = "filter courses with pagination")]
-      [ProducesResponseType(200)]
-      [ProducesResponseType(400)]
-      public async Task<ActionResult<CourseResponseDto>> Filter([FromQuery] CourseFilterReqDto reqDto)
-      {
-         var queryRes = await _repo.ListAsync(new CourseListFilterSpec(reqDto.PageNumber, reqDto.PageSize));
-         var apiRes = _mapper.Map<List<CourseResponseDto>>(queryRes);
-         return Ok(apiRes);
-      }
-      [HttpPost]
+		[HttpGet]
+		[SwaggerOperation(Summary = "filter courses with pagination")]
+		[ProducesResponseType(200)]
+		[ProducesResponseType(400)]
+		public async Task<ActionResult<CourseDefinitionDto>> Filter([FromQuery] CourseFilterReqDto reqDto)
+		{
+			var queryRes = await _repo.ListAsync(new CourseListFilterSpec(reqDto.PageNumber, reqDto.PageSize));
+			var apiRes = _mapper.Map<List<CourseDefinitionDto>>(queryRes);
+			return Ok(apiRes);
+		}
+		[HttpGet("{id}")]
+		[SwaggerOperation(Summary = "get full course info by id")]
+		[ProducesResponseType(200)]
+		[ProducesResponseType(400)]
+		public async Task<ActionResult<CourseDetailsDto>> GetById(string id)
+		{
+			var queryRes = await _repo.SingleOrDefaultAsync(new GetFullCourseInfoSpec(id));
+			var apiRes = _mapper.Map<CourseDetailsDto>(queryRes);
+			return Ok(apiRes);
+		}
+
+		[HttpPost]
       [SwaggerOperation(Summary = "add course definition")]
       [ProducesResponseType(200)]
       [ProducesResponseType(400)]

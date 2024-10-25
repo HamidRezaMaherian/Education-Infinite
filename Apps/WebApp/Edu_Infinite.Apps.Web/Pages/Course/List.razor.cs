@@ -8,7 +8,7 @@ namespace Edu_Infinite.Apps.Web.Pages.Course
    {
       [Inject]
       private CourseClientService ClientService { get; set; }
-      public IEnumerable<CourseResponseDto> Courses { get; set; } = [];
+      public IEnumerable<CourseDefinitionDto> Courses { get; set; } = [];
       protected override async Task OnInitializedAsync()
       {
          Courses = await ClientService.SearchCoursesByFilter(new CourseFilterReqDto() { PageNumber = 1, PageSize = 10 });
