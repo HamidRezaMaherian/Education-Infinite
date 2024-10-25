@@ -20,11 +20,11 @@ namespace Edu_Infinite.Course.Infrastructure.Services
                var res = await mediator.Send((item as ITransactionRequest<T>)!);
                if (res.IsSuccessfull)
                {
-                  mediator.Publish(res.Model);
+						_ = mediator.Publish(res.Model);
                }
             }
             else
-               mediator.Publish(item);
+					_ = mediator.Publish(item);
          }
       }
    }

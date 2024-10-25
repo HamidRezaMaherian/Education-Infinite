@@ -1,11 +1,10 @@
-﻿using Ardalis.Specification.EntityFrameworkCore;
-using Edu_Infinite.Course.Core.Aggregates.Course;
+﻿using Edu_Infinite.Course.Core.Aggregates.Course;
 using Edu_Infinite.Course.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Edu_Infinite.Course.Infrastructure.Database.Repositories
 {
-   internal class CourseRepository : EfRepository<CourseDefinition>, ICourseRepository
+	internal class CourseRepository : EfRepository<CourseDefinition>, ICourseRepository
    {
       private readonly DbContext dbContext;
 
