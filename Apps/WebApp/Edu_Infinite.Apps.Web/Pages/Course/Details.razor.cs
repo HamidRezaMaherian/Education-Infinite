@@ -6,7 +6,7 @@ namespace Edu_Infinite.Apps.Web.Pages.Course
 {
 	public partial class Details
 	{
-		protected CourseDetailsDto CourseDetails { get; set; }
+		protected CourseDetailsDto CourseDetails { get; set; } = CourseDetailsDto.EmptyObj();
 		[Inject]
 		private CourseClientService ClientService { get; set; }
 

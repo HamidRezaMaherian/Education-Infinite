@@ -5,8 +5,9 @@ namespace Edu_Infinite.Api.Shared.Dtos.Course
 {
 	public class CourseContentDto
 	{
-		public string Title { get; private set; }
-		public ContentType Type { get; private set; }
-		public Blob Content { get; private set; }
+		public string Title { get; set; }
+		public ContentType Type { get; set; }
+		public Blob Content { get; set; }
+		public float Size { get; set; }
 	}
 }
