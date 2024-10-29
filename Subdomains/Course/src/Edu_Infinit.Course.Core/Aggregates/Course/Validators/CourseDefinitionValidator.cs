@@ -13,7 +13,6 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course.Validators
          RuleFor(i => i.Description).NotEmpty();
          RuleFor(i => i.IntroVideo).NotNull();
          RuleFor(i => i.FullPrice).Must(v => v >= 0);
-         RuleFor(i => i.CategoryId).NotEmpty();
          RuleFor(i => i.Level).NotNull();
          RuleFor(i => i.MainImage).NotNull();
       }

@@ -6,6 +6,7 @@ using Edu_Infinite.SharedKernel.ValueObjects;
 using FluentValidation;
 using Edu_Infinite.Course.Core.Aggregates.Course.Events;
 using Edu_Infinit.Course.Core.Aggregates.Category;
+using Edu_Infinite.Identity.Shared;
 
 namespace Edu_Infinite.Course.Core.Aggregates.Course
 {
@@ -21,9 +22,8 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 			FullPrice = fullPrice;
 			MainImage = mainImage;
 			IntroVideo = introVideo;
-			CategoryId = categoryId;
 			Level = level;
-
+			Category = new CourseCategory(categoryId, null, null);
 			_valiator.ValidateAndThrow(this);
 		}
 		public CourseDefinition(string name, string shortDescription, string description, decimal fullPrice, Blob mainImage, Blob introVideo, Guid categoryId, SkillLevel level) : this(new Guid(), name, shortDescription, description, fullPrice, mainImage, introVideo, categoryId, level)
@@ -40,10 +40,10 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 
 		public Blob IntroVideo { get; private set; }
 
-		public Guid CategoryId { get; private set; }
-
 		public SkillLevel Level { get; private set; }
-		public CourseCategory Category { get; private set; }
+		public CourseCategory Category { get;private set; }
+
+		public Instructor Instructor { get; private set; }
 
 		private IList<CourseSection> _sections;
 		public ICollection<CourseSection> Sections => _sections.AsReadOnly();

@@ -27,7 +27,7 @@ namespace Edu_Infinite.Course.Infrastructure
          });
          services.AddSingleton(typeof(IEntityEventPublisher), typeof(CourseEntityEventPublisher));
          services.RegisterRepos();
-         services.BuildServiceProvider().MigrateDatabase();
+         //services.BuildServiceProvider().MigrateDatabase();
       }
       private static void RegisterRepos(this IServiceCollection services)
       {

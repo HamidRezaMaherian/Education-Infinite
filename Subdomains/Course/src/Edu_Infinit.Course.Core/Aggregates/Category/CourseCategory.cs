@@ -3,11 +3,10 @@ using Edu_Infinite.Course.Core.Aggregates.Course;
 using Edu_Infinite.SharedKernel;
 using Edu_Infinite.SharedKernel.Interfaces;
 using FluentValidation;
-using System.Numerics;
 
 namespace Edu_Infinit.Course.Core.Aggregates.Category
 {
-   public class CourseCategory : BaseEntity<Guid>, IAggregateRoot
+	public class CourseCategory : BaseEntity<Guid>, IAggregateRoot
    {
       private readonly CourseCategoryValidator _validator = new();
       public CourseCategory(Guid id, string name, Guid? parentId)

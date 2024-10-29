@@ -23,7 +23,7 @@ namespace Edu_Infinite.Order.Infrastructure
             cfg.RegisterServicesFromAssembly(typeof(OrderDefinition).Assembly);
          });
          services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
-         services.BuildServiceProvider()!.MigrateDatabase();
+         //services.BuildServiceProvider()!.MigrateDatabase();
       }
       private static void MigrateDatabase(this IServiceProvider services)
       {
