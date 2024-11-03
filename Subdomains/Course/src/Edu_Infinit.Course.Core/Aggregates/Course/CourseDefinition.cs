@@ -6,14 +6,13 @@ using Edu_Infinite.SharedKernel.ValueObjects;
 using FluentValidation;
 using Edu_Infinite.Course.Core.Aggregates.Course.Events;
 using Edu_Infinit.Course.Core.Aggregates.Category;
-using Edu_Infinite.Identity.Shared;
 
 namespace Edu_Infinite.Course.Core.Aggregates.Course
 {
 	public class CourseDefinition : BaseEntity<Guid>, IAggregateRoot
 	{
 		private static CourseDefinitionValidator _valiator = new();
-		public CourseDefinition(Guid id, string name, string shortDescription, string description, decimal fullPrice, Blob mainImage, Blob introVideo, Guid categoryId, SkillLevel level)
+		public CourseDefinition(Guid id, string name, string shortDescription, string description, decimal fullPrice, Blob mainImage, Blob introVideo, Guid categoryId, Guid instructorId, SkillLevel level)
 		{
 			Id = id;
 			Name = name;
@@ -23,10 +22,11 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 			MainImage = mainImage;
 			IntroVideo = introVideo;
 			Level = level;
-			Category = new CourseCategory(categoryId, null, null);
+			CategoryId = categoryId;
+			InstructorId = instructorId;
 			_valiator.ValidateAndThrow(this);
 		}
-		public CourseDefinition(string name, string shortDescription, string description, decimal fullPrice, Blob mainImage, Blob introVideo, Guid categoryId, SkillLevel level) : this(new Guid(), name, shortDescription, description, fullPrice, mainImage, introVideo, categoryId, level)
+		public CourseDefinition(string name, string shortDescription, Guid instructorId, string description, decimal fullPrice, Blob mainImage, Blob introVideo, Guid categoryId, SkillLevel level) : this(new Guid(), name, shortDescription, description, fullPrice, mainImage, introVideo, categoryId, instructorId, level)
 		{
 
 		}
@@ -41,9 +41,9 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 		public Blob IntroVideo { get; private set; }
 
 		public SkillLevel Level { get; private set; }
-		public CourseCategory Category { get;private set; }
-
-		public Instructor Instructor { get; private set; }
+		public Guid CategoryId { get; private set; }
+		public Guid InstructorId { get; init; }
+		public CourseCategory Category { get; private set; }
 
 		private IList<CourseSection> _sections;
 		public ICollection<CourseSection> Sections => _sections.AsReadOnly();

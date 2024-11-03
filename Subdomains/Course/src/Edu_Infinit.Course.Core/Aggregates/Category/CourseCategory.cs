@@ -7,25 +7,26 @@ using FluentValidation;
 namespace Edu_Infinit.Course.Core.Aggregates.Category
 {
 	public class CourseCategory : BaseEntity<Guid>, IAggregateRoot
-   {
-      private readonly CourseCategoryValidator _validator = new();
-      public CourseCategory(Guid id, string name, Guid? parentId)
-      {
-         Id = id;
-         Name = name;
-         ParentId = parentId;
-         _validator.ValidateAndThrow(this);
-      }
+	{
+		private readonly CourseCategoryValidator _validator = new();
+		public CourseCategory(Guid id, string name, Guid? parentId)
+		{
+			Id = id;
+			Name = name;
+			ParentId = parentId;
+			_validator.ValidateAndThrow(this);
+		}
+		public CourseCategory(string name, Guid? parentId) : this(new Guid(), name, parentId) { }
 
-      public string Name { get; private set; }
-      public Guid? ParentId { get; private set; }
-      public ICollection<CourseDefinition> Courses { get; private set; }
-      public ICollection<CourseCategory> SubCategories { get; private set; }
+		public string Name { get; private set; }
+		public Guid? ParentId { get; private set; }
+		public ICollection<CourseDefinition> Courses { get; private set; }
+		public ICollection<CourseCategory> SubCategories { get; private set; }
 
-      public void SaveCourse()
-      {
-         _validator.Validate(this);
-         _events.Add(new EntitySavedEvent<CourseCategory>(this));
-      }
-   }
+		public void SaveCourse()
+		{
+			_validator.Validate(this);
+			_events.Add(new EntitySavedEvent<CourseCategory>(this));
+		}
+	}
 }

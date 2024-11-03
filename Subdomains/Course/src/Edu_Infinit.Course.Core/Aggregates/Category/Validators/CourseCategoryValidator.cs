@@ -7,7 +7,7 @@ namespace Edu_Infinite.Course.Core.Aggregates.Category.Validators
 	{
 		public CourseCategoryValidator()
 		{
-			RuleFor(i => i.Id).NotEmpty();
+			RuleFor(i => i.Id).NotNull();
 			RuleFor(i => i.Name).NotEmpty();
 		}
 	}

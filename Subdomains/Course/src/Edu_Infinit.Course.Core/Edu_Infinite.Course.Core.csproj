@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Shared\Edu_Infinite.SharedKernel\Edu_Infinite.SharedKernel.csproj" />
-    <ProjectReference Include="..\..\..\Identity\Edu_Infinite.Identity.Shared\Edu_Infinite.Identity.Shared.csproj" />
   </ItemGroup>
 
 </Project>
