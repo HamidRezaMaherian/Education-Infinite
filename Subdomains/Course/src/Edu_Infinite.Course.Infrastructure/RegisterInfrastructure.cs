@@ -5,6 +5,7 @@ using Edu_Infinite.Course.Infrastructure.Database.Repositories;
 using Edu_Infinite.Course.Infrastructure.Services;
 using Edu_Infinite.SharedKernel;
 using Edu_Infinite.SharedKernel.Interfaces;
+using Edu_Infinite.SharedKernel.Utils;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,12 +33,12 @@ namespace Edu_Infinite.Course.Infrastructure
 		}
 		private static void RegisterRepos(this IServiceCollection services)
 		{
-			foreach (var entity in Assembly.GetAssembly(typeof(CourseDefinition))!.GetTypes().Where(i => i.)
+			var domainAssembly = Assembly.GetAssembly(typeof(CourseDefinition))!;
+			foreach (var aggregateType in domainAssembly.GetTypes().GetImplementorsOf<IAggregateRoot>())
 			{
-
+				services.AddScoped(typeof(IRepository<>).MakeGenericType(aggregateType), typeof(EfRepository<>).MakeGenericType(aggregateType));
+			services.AddScoped(typeof(IQueryRepository<>).MakeGenericType(aggregateType), typeof(EfRepository<>).MakeGenericType(aggregateType));
 			}
-			services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
-			services.AddScoped(typeof(IQueryRepository<>), typeof(EfRepository<>));
 			services.AddScoped<ICourseRepository, CourseRepository>();
 		}
 		private static void MigrateDatabase(this IServiceProvider services)
