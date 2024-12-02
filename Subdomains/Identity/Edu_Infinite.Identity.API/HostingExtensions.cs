@@ -60,14 +60,13 @@ internal static class HostingExtensions
       {
          app.UseDeveloperExceptionPage();
       }
-
       app.UseStaticFiles();
       app.UseRouting();
       app.UseIdentityServer();
       app.UseAuthorization();
-
       app.MapRazorPages()
           .RequireAuthorization();
+      app.MapControllers();
 
       return app;
    }

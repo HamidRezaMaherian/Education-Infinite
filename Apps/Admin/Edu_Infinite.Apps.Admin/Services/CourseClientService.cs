@@ -1,18 +1,15 @@
 ﻿using Edu_Infinite.Api.Shared.Dtos.Course;
-using Microsoft.Net.Http.Headers;
-using RestSharp.Authenticators;
 using RestSharp;
 
 namespace Edu_Infinite.Apps.Admin.Services
 {
-   public class CourseClientService
+	public class CourseClientService
    {
       private readonly RestClient _client;
 
       public CourseClientService(IConfiguration configuration)
       {
          var options = new RestClientOptions(configuration["Services:Course"]!);
-
          _client = new RestClient(options);
 
       }
@@ -20,6 +17,7 @@ namespace Edu_Infinite.Apps.Admin.Services
       public Task<ICollection<CourseDefinitionDto>> SearchCoursesByFilter(CourseFilterReqDto filterReqDto)
       {
          var request = new RestRequest("/api/Course/Filter");
+         request.AddHeader("X-Version", "2");
          foreach (var prop in typeof(CourseFilterReqDto).GetProperties())
             request.AddQueryParameter(prop.Name, prop.GetValue(filterReqDto)!.ToString());
          return _client.GetAsync<ICollection<CourseDefinitionDto>>(request);

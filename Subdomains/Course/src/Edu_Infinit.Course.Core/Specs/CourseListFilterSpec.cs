@@ -11,7 +11,7 @@ namespace Edu_Infinite.Course.Core.Specs
 {
    public class CourseListFilterSpec : BasePaginationSpec<CourseDefinition>
    {
-      public CourseListFilterSpec(int pageNumber, int pageSize) : base(pageNumber, pageSize)
+      public CourseListFilterSpec(int pageNumber, int pageSize,bool filterIsActive=true) : base(pageNumber, pageSize, filterIsActive)
       {
          Query.Include("Category");
       }

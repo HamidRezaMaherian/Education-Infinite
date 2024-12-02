@@ -7,31 +7,28 @@ namespace IdentityServerAspNetIdentity;
 public static class Config
 {
     public static IEnumerable<IdentityResource> IdentityResources =>
-        new IdentityResource[]
-        {
+        [
             new IdentityResources.OpenId(),
             new IdentityResources.Profile(),
             new IdentityResource()
             {
                 Name = "verification",
-                UserClaims = new List<string> 
-                { 
-                    JwtClaimTypes.Email,
+                UserClaims =
+					 [
+						  JwtClaimTypes.Email,
                     JwtClaimTypes.EmailVerified
-                }
+                ]
             },
-        };
+        ];
 
     public static IEnumerable<ApiScope> ApiScopes =>
-        new ApiScope[]
-        { 
+        [ 
             new ApiScope(name: "api.course.read", displayName: "My API"),
             new ApiScope(name: "api.course.write", displayName: "My API")
-        };
+        ];
 
     public static IEnumerable<Client> Clients =>
-        new Client[] 
-        {
+        [
             new Client
             {
                 ClientId = "admin_web",
@@ -63,13 +60,13 @@ public static class Config
 
                 AllowOfflineAccess = true,
 
-                AllowedScopes = new List<string>
-                {
-                    IdentityServerConstants.StandardScopes.OpenId,
+                AllowedScopes =
+					 [
+						  IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
                     //"verification",
                     //"api1",
-                }
+                ]
             }
-        };
+        ];
 }

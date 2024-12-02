@@ -43,7 +43,7 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 		public SkillLevel Level { get; private set; }
 		public Guid CategoryId { get; private set; }
 		public Guid InstructorId { get; init; }
-		public CourseCategory Category { get; private set; }
+		public CourseCategory Category { get; }
 
 		private IList<CourseSection> _sections;
 		public ICollection<CourseSection> Sections => _sections.AsReadOnly();
