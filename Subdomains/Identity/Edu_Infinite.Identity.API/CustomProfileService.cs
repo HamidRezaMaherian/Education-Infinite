@@ -1,5 +1,6 @@
 using Duende.IdentityServer.AspNetIdentity;
 using Duende.IdentityServer.Models;
+using Edu_Infinite.Identity.API.Models;
 using Edu_Infinite.Identity.Shared;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Edu_Infinite.Identity.Shared
+namespace Edu_Infinite.Identity.API.Models
 {
    public class Instructor : ApplicationUser
    {

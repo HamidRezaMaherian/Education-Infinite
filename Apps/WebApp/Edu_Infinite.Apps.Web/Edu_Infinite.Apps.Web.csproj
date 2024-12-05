@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Subdomains\Identity\Edu_Infinite.Identity.Shared\Edu_Infinite.Identity.Shared.csproj" />
     <ProjectReference Include="..\..\Api\Edu_Infinite.Api.Shared\Edu_Infinite.Api.Shared.csproj" />
   </ItemGroup>
 

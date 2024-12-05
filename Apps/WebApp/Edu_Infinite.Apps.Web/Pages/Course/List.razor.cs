@@ -11,7 +11,15 @@ namespace Edu_Infinite.Apps.Web.Pages.Course
       public IEnumerable<CourseDefinitionDto> Courses { get; set; } = [];
       protected override async Task OnInitializedAsync()
       {
-         Courses = await ClientService.SearchCoursesByFilter(new CourseFilterReqDto() { PageNumber = 1, PageSize = 10 });
+         try
+         {
+            Courses = await ClientService.SearchCoursesByFilter(new CourseFilterReqDto() { PageNumber = 1, PageSize = 10 });
+         }
+         catch
+         {
+            Courses = [];
+         }
+
          await base.OnInitializedAsync();
       }
    }

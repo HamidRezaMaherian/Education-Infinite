@@ -4,6 +4,7 @@ using Edu_Infinite.Identity.Shared;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Edu_Infinite.Identity.API.Models;
 
 namespace IdentityServerAspNetIdentity;
 
@@ -13,11 +14,11 @@ internal static class HostingExtensions
    {
       builder.Services.AddRazorPages();
 
-      builder.Services.AddDbContext<ApplicationDbContext>(options =>
+      builder.Services.AddDbContext<IdentityAppDbContext>(options =>
           options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), x => x.MigrationsHistoryTable("__IdentityDbMigrationsHistory")));
 
       builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-          .AddEntityFrameworkStores<ApplicationDbContext>()
+          .AddEntityFrameworkStores<IdentityAppDbContext>()
           .AddDefaultTokenProviders();
 
       builder.Services

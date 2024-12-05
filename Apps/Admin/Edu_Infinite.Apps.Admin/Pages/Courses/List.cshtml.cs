@@ -26,7 +26,7 @@ namespace Edu_Infinite.Apps.Admin.Pages.Courses
          ListViewModel.AddColumn("Description", "توضیحات");
          ListViewModel.AddColumn("ShortDescription", "توضیحات کوتاه");
          ListViewModel.AddColumn("Level", "سطح دوره");
-         ListViewModel.AddColumn("CategoryId", "دسته‌بندی");
+         ListViewModel.AddColumn("CategoryName", "دسته‌بندی");
       }
    }
 }

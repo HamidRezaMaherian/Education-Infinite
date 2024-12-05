@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Edu_Infinite.Identity.API.Models;
 
 namespace IdentityServerAspNetIdentity.Pages.Logout;
 

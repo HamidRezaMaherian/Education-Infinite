@@ -2,6 +2,7 @@
 using AutoMapper;
 using Edu_Infinit.Course.Core.Aggregates.Category;
 using Edu_Infinite.Api.Shared.Dtos.Course;
+using Edu_Infinite.Api.Shared.Dtos.Course.Category;
 using Edu_Infinite.Course.Core.Aggregates.Course;
 using Edu_Infinite.Course.Core.Specs;
 using Edu_Infinite.SharedKernel;
@@ -33,10 +34,10 @@ namespace Edu_Infinite.Api.Controllers.Course
 		[SwaggerOperation(Summary = "filter course categories with pagination")]
 		[ProducesResponseType(200)]
 		[ProducesResponseType(400)]
-		public async Task<ActionResult<CourseDefinitionDto>> Filter([FromQuery] CourseCategoryFilterReqDto reqDto)
+		public async Task<ActionResult<CourseCategoryDto>> Filter([FromQuery] CourseCategoryFilterReqDto reqDto)
 		{
 			var queryRes = await _repo.ListAsync(new CourseCategoryListFilterSpec(reqDto.PageNumber, reqDto.PageSize));
-			var apiRes = _mapper.Map<List<CourseCategory>>(queryRes);
+			var apiRes = _mapper.Map<List<CourseCategoryDto>>(queryRes);
 			return Ok(apiRes);
 		}
 		[HttpPost]

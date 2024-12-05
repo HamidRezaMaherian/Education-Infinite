@@ -5,6 +5,7 @@ using Edu_Infinite.Identity.Shared;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Edu_Infinite.Identity.API.Models;
 
 namespace IdentityServerAspNetIdentity;
 
@@ -14,7 +15,7 @@ public class SeedData
     {
         using (var scope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
         {
-            var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            var context = scope.ServiceProvider.GetRequiredService<IdentityAppDbContext>();
             context.Database.EnsureDeleted();
             context.Database.Migrate();
 

@@ -25,6 +25,7 @@ namespace Edu_Infinite.Apps.Web
          services.AddTransient<AntiforgeryHandler>();
          services.AddScoped<AuthenticationStateProvider, BffAuthenticationStateProvider>();
          services.AddSingleton<CourseClientService>();
+         services.AddSingleton<IdentityClientService>();
          services.AddBlazorBootstrap();
       }
    }
