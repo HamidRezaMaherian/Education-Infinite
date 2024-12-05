@@ -16,8 +16,10 @@ namespace Edu_Infinite.Course.Infrastructure.Database
 		public DbSet<CourseCategory> Categories { get; set; }
 		public DbSet<CourseContent> Contents { get; set; }
 		public DbSet<CourseSection> Sections { get; set; }
+		public DbSet<CourseComment> Comments { get; set; }
+		public DbSet<CourseRate> Rates { get; set; }
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+      protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<CourseVideoContent>().HasBaseType<CourseContent>();
 			modelBuilder.Entity<CourseDocumentContent>().HasBaseType<CourseContent>();

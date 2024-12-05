@@ -15,5 +15,5 @@ namespace Edu_Infinite.Api.Shared.Dtos.Course
 		public string CategoryName { get; set; }
 		public float Rate { get; set; }
 		public SkillLevel Level { get; set; }
-	}
+   }
 }

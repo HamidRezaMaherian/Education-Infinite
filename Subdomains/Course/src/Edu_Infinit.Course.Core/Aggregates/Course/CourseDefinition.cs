@@ -45,13 +45,33 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 		public Guid InstructorId { get; init; }
 		public CourseCategory Category { get; }
 
-		private IList<CourseSection> _sections;
-		public ICollection<CourseSection> Sections => _sections.AsReadOnly();
+      private IList<CourseSection> _sections;
+      public ICollection<CourseSection> Sections => _sections.AsReadOnly();
 
-		public CourseDefinition AddSection(CourseSection section)
+      private IList<CourseComment> _comments;
+      public ICollection<CourseComment> Comments => _comments.AsReadOnly();
+
+      private IList<CourseRate> _rates;
+      public ICollection<CourseRate> Rates => _rates.AsReadOnly();
+
+      public CourseDefinition AddComment(CourseComment comment)
+      {
+         //_valiator.ValidateNewSection(this, section);
+         _comments.Add(comment);
+         _events.Add(new NewCourseCommentAddedEvent(comment, Id));
+         return this;
+      }
+      public CourseDefinition AddRate(CourseRate rate)
+      {
+         //_valiator.ValidateNewSection(this, section);
+         _rates.Add(rate);
+         _events.Add(new NewCourseRateAddedEvent(rate, Id));
+         return this;
+      }
+      public CourseDefinition AddSection(CourseSection section)
 		{
 			_valiator.ValidateNewSection(this, section);
-			Sections.Add(section);
+			_sections.Add(section);
 			_events.Add(new NewCourseSectionAddedEvent(section, Id));
 			return this;
 		}

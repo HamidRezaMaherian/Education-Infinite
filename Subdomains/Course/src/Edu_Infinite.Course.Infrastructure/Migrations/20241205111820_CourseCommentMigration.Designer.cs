@@ -4,6 +4,7 @@ using Edu_Infinite.Course.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Edu_Infinite.Course.Infrastructure.Migrations
 {
     [DbContext(typeof(CourseAppDbContext))]
-    partial class CourseAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241205111820_CourseCommentMigration")]
+    partial class CourseCommentMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,9 +68,6 @@ namespace Edu_Infinite.Course.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("DefinitionId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
@@ -87,8 +87,6 @@ namespace Edu_Infinite.Course.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DefinitionId");
 
                     b.HasIndex("ParentId");
 
@@ -198,38 +196,6 @@ namespace Edu_Infinite.Course.Infrastructure.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("Edu_Infinite.Course.Core.Aggregates.Course.CourseRate", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("DefinitionId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
-                    b.Property<byte>("Rate")
-                        .HasColumnType("tinyint");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DefinitionId");
-
-                    b.ToTable("Rates");
-                });
-
             modelBuilder.Entity("Edu_Infinite.Course.Core.Aggregates.Course.CourseSection", b =>
                 {
                     b.Property<int>("Id")
@@ -285,12 +251,6 @@ namespace Edu_Infinite.Course.Infrastructure.Migrations
 
             modelBuilder.Entity("Edu_Infinite.Course.Core.Aggregates.Course.CourseComment", b =>
                 {
-                    b.HasOne("Edu_Infinite.Course.Core.Aggregates.Course.CourseDefinition", null)
-                        .WithMany("Comments")
-                        .HasForeignKey("DefinitionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Edu_Infinite.Course.Core.Aggregates.Course.CourseComment", null)
                         .WithMany("SubComments")
                         .HasForeignKey("ParentId");
@@ -316,15 +276,6 @@ namespace Edu_Infinite.Course.Infrastructure.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Edu_Infinite.Course.Core.Aggregates.Course.CourseRate", b =>
-                {
-                    b.HasOne("Edu_Infinite.Course.Core.Aggregates.Course.CourseDefinition", null)
-                        .WithMany("Rates")
-                        .HasForeignKey("DefinitionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Edu_Infinite.Course.Core.Aggregates.Course.CourseSection", b =>
                 {
                     b.HasOne("Edu_Infinite.Course.Core.Aggregates.Course.CourseDefinition", null)
@@ -348,10 +299,6 @@ namespace Edu_Infinite.Course.Infrastructure.Migrations
 
             modelBuilder.Entity("Edu_Infinite.Course.Core.Aggregates.Course.CourseDefinition", b =>
                 {
-                    b.Navigation("Comments");
-
-                    b.Navigation("Rates");
-
                     b.Navigation("Sections");
                 });
 

@@ -12,5 +12,7 @@ namespace Edu_Infinite.Course.Core.Interfaces
    {
       Task<CourseSection> AddSection(CourseSection section, CancellationToken cancellationToken = default);
       Task<CourseContent> AddContent(CourseContent content, CancellationToken cancellationToken = default);
+      Task<CourseComment> AddComment(CourseComment comment, CancellationToken cancellationToken = default);
+      //Task<CourseRate> AddRate(CourseRate content, CancellationToken cancellationToken = default);
    }
 }

@@ -12,7 +12,15 @@ namespace Edu_Infinite.Course.Infrastructure.Database.Repositories
       {
          this.dbContext = dbContext;
       }
-		public async Task<CourseContent> AddContent(CourseContent content, CancellationToken cancellationToken = default)
+
+      public async Task<CourseComment> AddComment(CourseComment comment, CancellationToken cancellationToken = default)
+      {
+         var res = await dbContext.AddAsync(comment);
+         await dbContext.SaveChangesAsync(cancellationToken);
+         return res.Entity;
+      }
+
+      public async Task<CourseContent> AddContent(CourseContent content, CancellationToken cancellationToken = default)
       {
          var res = await dbContext.AddAsync(content);
          await dbContext.SaveChangesAsync(cancellationToken);
