@@ -7,12 +7,10 @@ namespace Edu_Infinite.Order.Core.Aggregates.Order
 {
    public class OrderDefinition : BaseEntity<Guid>, IAggregateRoot
    {
-      public OrderDefinition(Guid basketId)
+      public OrderDefinition()
       {
-         BasketId = basketId;
       }
 
-      public Guid BasketId { get; set; }
       public decimal TotalPrice { get; set; }
 
       private IList<OrderItem> _items;
