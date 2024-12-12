@@ -1,5 +1,4 @@
-﻿using Edu_Infinite.Order.Core.Aggregates.Basket;
-using Edu_Infinite.Order.Core.Aggregates.Order;
+﻿using Edu_Infinite.Order.Core.Aggregates.Order;
 using Edu_Infinite.SharedKernel;
 using Edu_Infinite.SharedKernel.ValueObjects;
 using Microsoft.EntityFrameworkCore;
@@ -11,8 +10,7 @@ namespace Edu_Infinite.Order.Infrastructure.Database
    internal class OrderAppDbContext(DbContextOptions<OrderAppDbContext> options) : DbContext(options)
    {
       public DbSet<OrderDefinition> Orders { get; set; }
-      public DbSet<BasketDefinition> Baskets { get; set; }
-      public DbSet<BasketItem> BasketItems { get; set; }
+      public DbSet<OrderItem> OrderItems { get; set; }
 
       protected override void OnModelCreating(ModelBuilder modelBuilder)
       {

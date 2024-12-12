@@ -44,11 +44,11 @@ namespace Edu_Infinite.Api.Controllers.Order
       [ProducesResponseType(400)]
       public async Task<IActionResult> AddOrder([FromBody] CreateOrderDto reqDto)
       {
-         var orderDefinition = await _repo.GetByIdAsync(reqDto.OrderId);
-         if (orderDefinition is null)
-            return BadRequest("order not found");
-         orderDefinition.AddItem(_mapper.Map<OrderItem>(reqDto));
-         await eventPublisher.Publish(orderDefinition);
+         //var orderDefinition = await _repo.GetByIdAsync(reqDto.OrderId);
+         //if (orderDefinition is null)
+         //   return BadRequest("order not found");
+         //orderDefinition.AddItem(_mapper.Map<OrderItem>(reqDto));
+         //await eventPublisher.Publish(orderDefinition);
          return Ok();
       }
 

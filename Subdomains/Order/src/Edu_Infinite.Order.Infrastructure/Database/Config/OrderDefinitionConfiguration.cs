@@ -1,5 +1,4 @@
 ﻿using Edu_Infinite.Course.Infrastructure.Database.Config;
-using Edu_Infinite.Order.Core.Aggregates.Basket;
 using Edu_Infinite.Order.Core.Aggregates.Order;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -11,7 +10,7 @@ namespace Edu_Infinite.Order.Infrastructure.Database.Config
       {
          base.Configure(builder);
          builder.Property(i => i.TotalPrice).HasPrecision(3).IsRequired();
-         builder.HasOne<BasketDefinition>().WithOne().HasForeignKey<OrderDefinition>(i => i.BasketId);
+         builder.HasMany<OrderItem>(i => i.Items).WithOne().HasForeignKey(i => i.OrderId);
       }
    }
 }

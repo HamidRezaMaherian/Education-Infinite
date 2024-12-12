@@ -8,7 +8,6 @@ namespace Edu_Infinite.Order.Core.Aggregates.Order.Validators
 		public OrderDefinitionValidator()
 		{
 			RuleFor(i => i.Id).NotEmpty();
-			RuleFor(i => i.BasketId).NotEmpty();
       }
 	}
 }

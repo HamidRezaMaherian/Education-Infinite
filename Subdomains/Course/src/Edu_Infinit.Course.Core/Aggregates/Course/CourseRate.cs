@@ -3,11 +3,11 @@
 namespace Edu_Infinite.Course.Core.Aggregates.Course
 {
    public class CourseRate : BaseEntity<Guid>
-	{
-      public CourseRate(byte rate, string userId)
+   {
+      public CourseRate(byte rate, string userName)
       {
          Rate = rate;
-         UserName = userId;
+         UserName = userName;
       }
 
       public byte Rate { get; private set; }

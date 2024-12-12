@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Edu_Infinite.Api.Shared.Dtos.Order
 {
-   internal class CreateOrderDto
+   public class CreateOrderDto
    {
    }
 }
