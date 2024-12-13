@@ -33,7 +33,7 @@ namespace Edu_Infinite.Api.Controllers.Course
       [ProducesResponseType(400)]
       public async Task<ActionResult<CourseDefinitionDto>> Filter([FromQuery] CourseFilterReqDto reqDto)
       {
-         var queryRes = await _repo.ListAsync(new CourseListFilterSpec(reqDto.PageNumber, reqDto.PageSize));
+         var queryRes = await _repo.ListAsync(new CourseListFilterSpec(reqDto.PageNumber, reqDto.PageSize, reqDto.CategoryId));
          var apiRes = _mapper.Map<List<CourseDefinitionDto>>(queryRes);
          return Ok(apiRes);
       }
@@ -98,7 +98,7 @@ namespace Edu_Infinite.Api.Controllers.Course
       [ProducesResponseType(400)]
       public async Task<ActionResult<CourseDefinitionDto>> Filter([FromQuery] CourseFilterReqDto reqDto)
       {
-         var queryRes = await _repo.ListAsync(new CourseListFilterSpec(reqDto.PageNumber, reqDto.PageSize, false));
+         var queryRes = await _repo.ListAsync(new CourseListFilterSpec(reqDto.PageNumber, reqDto.PageSize, filterIsActive: false));
          var apiRes = _mapper.Map<List<CourseDefinitionDto>>(queryRes);
          return Ok(apiRes);
       }

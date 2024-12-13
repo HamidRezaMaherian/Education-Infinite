@@ -6,67 +6,69 @@ namespace IdentityServerAspNetIdentity;
 
 public static class Config
 {
-    public static IEnumerable<IdentityResource> IdentityResources =>
-        [
-            new IdentityResources.OpenId(),
-            new IdentityResources.Profile(),
-            new IdentityResource()
-            {
-                Name = "verification",
-                UserClaims =
+	public static IEnumerable<IdentityResource> IdentityResources =>
+		 [
+			  new IdentityResources.OpenId(),
+				new IdentityResources.Profile(),
+				new IdentityResource()
+				{
+					 Name = "verification",
+					 UserClaims =
 					 [
 						  JwtClaimTypes.Email,
-                    JwtClaimTypes.EmailVerified
-                ]
-            },
-        ];
+						  JwtClaimTypes.EmailVerified
+					 ]
+				},
+		  ];
 
-    public static IEnumerable<ApiScope> ApiScopes =>
-        [ 
-            new ApiScope(name: "api.course.read", displayName: "My API"),
-            new ApiScope(name: "api.course.write", displayName: "My API")
-        ];
+	public static IEnumerable<ApiScope> ApiScopes =>
+		 [
+			  new ApiScope(name: "api.course.read", displayName: "My API"),
+				new ApiScope(name: "api.course.write", displayName: "My API")
+		 ];
 
-    public static IEnumerable<Client> Clients =>
-        [
-            new Client
-            {
-                ClientId = "admin_web",
+	public static IEnumerable<Client> Clients =>
+		 [
+			  new Client
+				{
+					 ClientId = "admin_web",
 
                 // no interactive user, use the clientid/secret for authentication
                 AllowedGrantTypes = GrantTypes.Hybrid,
 
                 // secret for authentication
                 ClientSecrets =
-                {
-                    new Secret("secret".Sha256())
-                },
+					 {
+						  new Secret("secret".Sha256())
+					 },
 
                 // scopes that client has access to
-                AllowedScopes = { "api1" }
-            },
-            new Client
-            {
-                ClientId = "client_web_host",
-                ClientSecrets = { new Secret("secret".Sha256()) },
+                AllowedScopes = { "api.course.read", "api.course.write" }
+				},
+				new Client
+				{
+					 ClientId = "client_web_host",
+					 ClientSecrets = { new Secret("secret".Sha256()) },
 
-                AllowedGrantTypes = GrantTypes.Code,
+					 AllowedGrantTypes = GrantTypes.Code,
                 
                 // where to redirect to after login
-                RedirectUris = { "https://localhost:7068/signin-oidc" },
-
+                RedirectUris = { "https://localhost:44333/signin-oidc" },
+					 AllowAccessTokensViaBrowser = true,
+					 AllowedCorsOrigins ={ "https://localhost:44333" },
                 // where to redirect to after logout
-                PostLogoutRedirectUris = { "https://localhost:7068/signout-callback-oidc" },
+                PostLogoutRedirectUris = { "https://localhost:44333/signout-callback-oidc" },
 
-                AllowOfflineAccess = true,
+					 AllowOfflineAccess = true,
 
-                AllowedScopes =
+					 AllowedScopes =
 					 [
 						  IdentityServerConstants.StandardScopes.OpenId,
-                    IdentityServerConstants.StandardScopes.Profile,
+						  IdentityServerConstants.StandardScopes.Profile,
+						  IdentityServerConstants.StandardScopes.OfflineAccess,
                     //"verification",
-                    //"api1",
-                ]
-            }
-        ];
+                    "api.course.read",
+					 ]
+				}
+		 ];
 }

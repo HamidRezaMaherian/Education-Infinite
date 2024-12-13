@@ -134,6 +134,9 @@
 @code {
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
-		await _jsRuntime.InvokeVoidAsync("LoadScripts");
+		await base.OnAfterRenderAsync(firstRender);
+		await Task.Delay(1000);
+		if (firstRender)
+			await _jsRuntime.InvokeVoidAsync("LoadScripts");
 	}
 }

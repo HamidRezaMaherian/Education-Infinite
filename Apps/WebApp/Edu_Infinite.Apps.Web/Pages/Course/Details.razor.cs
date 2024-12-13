@@ -7,22 +7,24 @@ namespace Edu_Infinite.Apps.Web.Pages.Course
    public partial class Details
    {
       protected CourseDetailsDto CourseDetails { get; set; } = CourseDetailsDto.EmptyObj();
-      [Inject]
-      private CourseClientService ClientService { get; set; }
+		[Inject]
+		private CourseClientService CourseClientService { get; set; }
+		[Inject]
+		private IdentityClientService IdentityClientService { get; set; }
 
-      [Parameter]
+		[Parameter]
       public string Id { get; set; }
       protected override async Task OnInitializedAsync()
       {
          try
          {
-            CourseDetails = await ClientService.GetCourseFullInfo(Id);
+            CourseDetails = await CourseClientService.GetCourseFullInfo(Id);
+            CourseDetails.Instructor = await IdentityClientService.GetByUserName(CourseDetails.Definition.InstructorUserName);
          }
          catch
          {
-            CourseDetails = new();
+            CourseDetails = CourseDetailsDto.EmptyObj();
          }
-
          await base.OnInitializedAsync();
       }
    }

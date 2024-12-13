@@ -8,16 +8,17 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
    public class CourseSection : BaseEntity<int>
    {
       private readonly CourseSectionValidator _validator = new();
-      public CourseSection(string name)
+      public CourseSection(string name, Guid definitionId = default)
       {
+         //_validator.ValidateAndThrow(this);
          Name = name;
-         _validator.ValidateAndThrow(this);
+         DefinitionId = definitionId;
       }
-      public CourseSection(int id, string name) : this(name)
+      public CourseSection(int id, string name, Guid definitionId = default) : this(name,definitionId)
       {
          Id = id;
       }
-      public Guid DefinitionId { get; internal set; }
+      public Guid DefinitionId { get; private set; }
       public string Name { get; private set; }
       public ICollection<CourseContent> Contents { get; private set; }
 

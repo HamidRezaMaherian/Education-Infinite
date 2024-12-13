@@ -13,7 +13,7 @@ namespace Edu_Infinite.Course.Core.Specs
 	{
 		public GetFullCourseInfoSpec(string id)
 		{
-			Query.Where(i => i.Id.ToString().Equals(id)).Include(i=>i.Category).Include(i => i.Sections).ThenInclude(i => i.Contents);
+			Query.Where(i => i.Id.ToString().Equals(id)).Include(i=>i.Comments).Include(i=>i.Category).Include(i => i.Sections).ThenInclude(i => i.Contents);
 		}
 	}
 }

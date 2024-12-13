@@ -14,7 +14,7 @@ namespace Edu_Infinite.Apps.Web.Components
       {
          try
          {
-            Instructors = await ClientService.SearchInstructorsByFilter();
+            //Instructors = await ClientService.GetByUserName();
          }
          catch
          {

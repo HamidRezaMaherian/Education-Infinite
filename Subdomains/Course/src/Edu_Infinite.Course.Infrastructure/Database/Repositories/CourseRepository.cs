@@ -15,7 +15,7 @@ namespace Edu_Infinite.Course.Infrastructure.Database.Repositories
 
       public async Task<CourseComment> AddComment(CourseComment comment, CancellationToken cancellationToken = default)
       {
-         var res = await dbContext.AddAsync(comment);
+         var res = await dbContext.Set<CourseComment>().AddAsync(comment);
          await dbContext.SaveChangesAsync(cancellationToken);
          return res.Entity;
       }

@@ -9,6 +9,18 @@
 		public string UserName { get; set; }
 		public string Email { get; set; }
 		public string PhoneNumber { get; set; }
-
+		public static InstructorDto EmptyObj()
+		{
+			return new InstructorDto
+			{
+				FirstName = "",
+				LastName = "",
+				AboutMe = "",
+				Avatar = "",
+				UserName = "",
+				Email = "",
+				PhoneNumber = ""
+			};
+		}
 	}
 }

@@ -22,11 +22,19 @@ namespace Edu_Infinite.Identity.API.API
 			this.userManager = userManager;
 			this.mapper = mapper;
 		}
-		[HttpGet]
-		public async Task<IActionResult> Filter()
+		[HttpGet("{userName}")]
+		public async Task<IActionResult> GetByUserName(string? userName)
 		{
-			var users = await userManager.Users.OfType<IdentityUser>().ToListAsync();
-			return Ok(mapper.Map<ICollection<InstructorDto>>(users));
+			if (userName is null)
+			{
+				var users = await userManager.Users.OfType<IdentityUser>().ToListAsync();
+				return Ok(mapper.Map<List<InstructorDto>>(users));
+			}
+			else
+			{
+				var user = await userManager.Users.OfType<IdentityUser>().FirstOrDefaultAsync(i => i.UserName == userName);
+				return Ok(mapper.Map<InstructorDto>(user));
+			}
 		}
 	}
 }

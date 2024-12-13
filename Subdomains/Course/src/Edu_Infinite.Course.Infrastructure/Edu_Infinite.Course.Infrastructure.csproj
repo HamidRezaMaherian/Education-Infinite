@@ -1,24 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="8.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
-  </ItemGroup>
+	<ItemGroup>
+		<InternalsVisibleTo Include="Course.Infrastructure.Tests"/>
+		<PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Shared\Edu_Infinite.SharedKernel\Edu_Infinite.SharedKernel.csproj" />
-    <ProjectReference Include="..\Edu_Infinit.Course.Core\Edu_Infinite.Course.Core.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\Shared\Edu_Infinite.SharedKernel\Edu_Infinite.SharedKernel.csproj" />
+		<ProjectReference Include="..\Edu_Infinit.Course.Core\Edu_Infinite.Course.Core.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Services\" />
+		<InternalsVisibleTo Include="Course.Insfrastructure.Tests" />
+	</ItemGroup>
 
 </Project>

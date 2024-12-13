@@ -14,7 +14,7 @@ namespace Edu_Infinite.Course.Core.Specs
    {
       public CourseCategoryListFilterSpec(int pageNumber, int pageSize) : base(pageNumber, pageSize)
       {
-         Query.Include(i=>i.SubCategories);
+         Query.Where(i => i.ParentId == null).Include(i => i.SubCategories);
       }
    }
 }

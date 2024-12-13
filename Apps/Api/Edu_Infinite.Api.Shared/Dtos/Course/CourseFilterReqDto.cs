@@ -2,6 +2,6 @@
 {
    public class CourseFilterReqDto : BaseFilterRequestDto
    {
-
-   }
+        public string CategoryId { get; set; }
+    }
 }

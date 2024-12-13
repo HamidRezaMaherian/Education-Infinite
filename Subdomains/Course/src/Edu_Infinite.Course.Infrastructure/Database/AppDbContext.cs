@@ -3,14 +3,12 @@ using Edu_Infinite.Course.Core.Aggregates.Course;
 using Edu_Infinite.SharedKernel;
 using Edu_Infinite.SharedKernel.ValueObjects;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 using System.Reflection;
 
 namespace Edu_Infinite.Course.Infrastructure.Database
 {
-	internal class CourseAppDbContext(DbContextOptions<CourseAppDbContext> options) : DbContext(options)
+   internal class CourseAppDbContext(DbContextOptions<CourseAppDbContext> options) : DbContext(options)
 	{
 		public DbSet<CourseDefinition> Courses { get; set; }
 		public DbSet<CourseCategory> Categories { get; set; }

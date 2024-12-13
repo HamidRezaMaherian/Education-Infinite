@@ -37,6 +37,7 @@ namespace Edu_Infinite.Api.Shared.Mappers
 
          CreateMap<CourseRate, AddCourseRateDto>()
             .ForMember(i => i.CourseId, action => action.MapFrom(i => i.DefinitionId.ToString()));
+         CreateMap<CourseComment, CourseCommentDto>();
       }
    }
 }

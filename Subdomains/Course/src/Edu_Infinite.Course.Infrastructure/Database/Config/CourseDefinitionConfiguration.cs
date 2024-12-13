@@ -9,7 +9,7 @@ namespace Edu_Infinite.Course.Infrastructure.Database.Config
 		public override void Configure(EntityTypeBuilder<CourseDefinition> builder)
 		{
 			base.Configure(builder);
-			builder.Property(i => i.InstructorId).IsRequired();
+			builder.Property(i => i.InstructorUserName).IsRequired();
 			builder.Property(i => i.Name).IsRequired().HasMaxLength(200);
 			builder.Property(i => i.FullPrice).HasPrecision(10).IsRequired();
 			builder.HasOne(i => i.Category).WithMany(i => i.Courses).HasForeignKey("CategoryId").IsRequired();

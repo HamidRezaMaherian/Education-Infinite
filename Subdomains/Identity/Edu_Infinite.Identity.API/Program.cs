@@ -27,6 +27,7 @@ try
 	var app = builder
 		  .ConfigureServices()
 		  .ConfigurePipeline();
+
 	// Configure the HTTP request pipeline.
 	if (app.Environment.IsDevelopment())
 	{

@@ -55,7 +55,9 @@ internal static class HostingExtensions
 
    public static WebApplication ConfigurePipeline(this WebApplication app)
    {
-      app.UseSerilogRequestLogging();
+		app.UseCors(conf => conf.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+		app.UseSerilogRequestLogging();
 
       if (app.Environment.IsDevelopment())
       {

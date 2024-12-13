@@ -12,7 +12,7 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 	public class CourseDefinition : BaseEntity<Guid>, IAggregateRoot
 	{
 		private static CourseDefinitionValidator _valiator = new();
-		public CourseDefinition(Guid id, string name, string shortDescription, string description, decimal fullPrice, Blob mainImage, Blob introVideo, Guid categoryId, Guid instructorId, SkillLevel level)
+		public CourseDefinition(Guid id, string name, string shortDescription, string description, decimal fullPrice, Blob mainImage, Blob introVideo, Guid categoryId, string instructorUserName, SkillLevel level)
 		{
 			Id = id;
 			Name = name;
@@ -23,10 +23,10 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 			IntroVideo = introVideo;
 			Level = level;
 			CategoryId = categoryId;
-			InstructorId = instructorId;
+			InstructorUserName = instructorUserName;
 			_valiator.ValidateAndThrow(this);
 		}
-		public CourseDefinition(string name, string shortDescription, Guid instructorId, string description, decimal fullPrice, Blob mainImage, Blob introVideo, Guid categoryId, SkillLevel level) : this(new Guid(), name, shortDescription, description, fullPrice, mainImage, introVideo, categoryId, instructorId, level)
+		public CourseDefinition(string name, string shortDescription, string instructorId, string description, decimal fullPrice, Blob mainImage, Blob introVideo, Guid categoryId, SkillLevel level) : this(new Guid(), name, shortDescription, description, fullPrice, mainImage, introVideo, categoryId, instructorId, level)
 		{
 
 		}
@@ -42,7 +42,7 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 
 		public SkillLevel Level { get; private set; }
 		public Guid CategoryId { get; private set; }
-		public Guid InstructorId { get; init; }
+		public string InstructorUserName { get; init; }
 		public CourseCategory Category { get; }
 
       private IList<CourseSection> _sections;

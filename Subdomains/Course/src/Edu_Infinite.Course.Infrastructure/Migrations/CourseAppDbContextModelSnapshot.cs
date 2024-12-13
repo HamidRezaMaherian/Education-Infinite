@@ -82,7 +82,7 @@ namespace Edu_Infinite.Course.Infrastructure.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -162,8 +162,9 @@ namespace Edu_Infinite.Course.Infrastructure.Migrations
                         .HasPrecision(10)
                         .HasColumnType("decimal(10,2)");
 
-                    b.Property<Guid>("InstructorId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("InstructorUserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("IntroVideo")
                         .HasColumnType("nvarchar(max)");
@@ -219,7 +220,7 @@ namespace Edu_Infinite.Course.Infrastructure.Migrations
                     b.Property<byte>("Rate")
                         .HasColumnType("tinyint");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

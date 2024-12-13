@@ -14,7 +14,7 @@ namespace Edu_Infinite.Course.Core.Aggregates.Course
 			SectionId = sectionId;
 			Title = title;
 			Content = content;
-			_validator.ValidateAndThrow(this);
+			//_validator.ValidateAndThrow(this);
 		}
 		public string Title { get; protected set; }
 		public Blob Content { get; protected set; }
