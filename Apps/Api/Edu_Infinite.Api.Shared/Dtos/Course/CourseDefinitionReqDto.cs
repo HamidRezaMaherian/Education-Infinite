@@ -17,8 +17,10 @@ namespace Edu_Infinite.Api.Shared.Dtos.Course
 
       public SkillLevel Level { get; set; }
 
-   }
-   public class CourseUpdateReqDto : CourseCreateReqDto
+		public string InstructorUserName { get; set; }
+
+	}
+	public class CourseUpdateReqDto : CourseCreateReqDto
    {
       public string Id { get; set; }
    }

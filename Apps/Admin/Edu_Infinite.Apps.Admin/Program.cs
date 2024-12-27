@@ -1,4 +1,5 @@
 using Edu_Infinite.Apps.Admin.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Edu_Infinite.Apps.Admin
 {
@@ -10,6 +11,33 @@ namespace Edu_Infinite.Apps.Admin
 
          // Add services to the container.
          builder.Services.AddRazorPages();
+         builder.Services.AddAutoMapper(typeof(Dummy).Assembly);
+         builder.Services.AddAuthentication(options =>
+         {
+            options.DefaultScheme = "Cookies";
+            options.DefaultChallengeScheme = "oidc";
+         })
+          .AddCookie("Cookies")
+          .AddOpenIdConnect("oidc", options =>
+          {
+             options.Authority = "https://localhost:5001";
+
+             options.ClientId = "admin_web";
+             options.ClientSecret = "secret";
+             options.ResponseType = "code";
+
+             options.Scope.Clear();
+             options.Scope.Add("openid");
+             options.Scope.Add("profile");
+             //options.Scope.Add("verification");
+             //options.ClaimActions.MapJsonKey("email_verified", "email_verified");
+             options.GetClaimsFromUserInfoEndpoint = true;
+
+             options.MapInboundClaims = false; // Don't rename claim types
+
+             options.SaveTokens = true;
+          });
+
          builder.Services.AddSingleton<CourseClientService>();
 
          var app = builder.Build();
@@ -26,7 +54,7 @@ namespace Edu_Infinite.Apps.Admin
          app.UseStaticFiles();
 
          app.UseRouting();
-
+         app.UseAuthentication();
          app.UseAuthorization();
 
          app.MapRazorPages();
@@ -35,3 +63,4 @@ namespace Edu_Infinite.Apps.Admin
       }
    }
 }
+file class Dummy { }

@@ -33,17 +33,26 @@ public static class Config
 				{
 					 ClientId = "admin_web",
 
-                // no interactive user, use the clientid/secret for authentication
-                AllowedGrantTypes = GrantTypes.Hybrid,
+					 ClientSecrets = { new Secret("secret".Sha256()) },
+					 AllowedGrantTypes = GrantTypes.Code,
+                
+                // where to redirect to after login
+                RedirectUris = { "https://localhost:44323/signin-oidc" },
+					 AllowAccessTokensViaBrowser = true,
+					 AllowedCorsOrigins ={ "https://localhost:44323" },
+                // where to redirect to after logout
+                PostLogoutRedirectUris = { "https://localhost:44323/signout-callback-oidc" },
 
-                // secret for authentication
-                ClientSecrets =
-					 {
-						  new Secret("secret".Sha256())
-					 },
+					 AllowOfflineAccess = true,
 
-                // scopes that client has access to
-                AllowedScopes = { "api.course.read", "api.course.write" }
+					 AllowedScopes =
+					 [
+						  IdentityServerConstants.StandardScopes.OpenId,
+						  IdentityServerConstants.StandardScopes.Profile,
+						  IdentityServerConstants.StandardScopes.OfflineAccess,
+						  "api.course.read",
+						  "api.course.write",
+					 ]
 				},
 				new Client
 				{
@@ -53,11 +62,11 @@ public static class Config
 					 AllowedGrantTypes = GrantTypes.Code,
                 
                 // where to redirect to after login
-                RedirectUris = { "https://localhost:44333/signin-oidc" },
+                RedirectUris = { "https://localhost:44333/signin-oidc","https://localhost:7068/signin-oidc" },
 					 AllowAccessTokensViaBrowser = true,
-					 AllowedCorsOrigins ={ "https://localhost:44333" },
+					 AllowedCorsOrigins ={ "https://localhost:44333","https://localhost:7068" },
                 // where to redirect to after logout
-                PostLogoutRedirectUris = { "https://localhost:44333/signout-callback-oidc" },
+                PostLogoutRedirectUris = { "https://localhost:44333/signout-callback-oidc","https://localhost:7068/signout-callback-oidc" },
 
 					 AllowOfflineAccess = true,
 
@@ -66,8 +75,7 @@ public static class Config
 						  IdentityServerConstants.StandardScopes.OpenId,
 						  IdentityServerConstants.StandardScopes.Profile,
 						  IdentityServerConstants.StandardScopes.OfflineAccess,
-                    //"verification",
-                    "api.course.read",
+						  "api.course.read",
 					 ]
 				}
 		 ];

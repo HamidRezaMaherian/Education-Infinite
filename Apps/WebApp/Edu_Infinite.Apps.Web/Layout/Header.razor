@@ -1,4 +1,6 @@
-﻿<header data-anim="fade" data-add-bg="" class="header -type-4 -shadow bg-white js-header">
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+  
+<header data-anim="fade" data-add-bg="" class="header -type-4 -shadow bg-white js-header">
 	<div class="header__container border-bottom-light py-10">
 		<div class="row justify-between items-center">
 
@@ -142,73 +144,62 @@
 							</button>
 
 							<div class="toggle-element js-cart-toggle">
-								<div class="header-cart bg-white -dark-bg-dark-1 rounded-8">
-									<div class="px-30 pt-30 pb-10">
-
-										<div class="row justify-between x-gap-40 pb-20">
-											<div class="col">
-												<div class="row x-gap-10 y-gap-10">
-													<div class="col-auto">
-														<img src="img/menus/cart/1.png" alt="image">
-													</div>
-
+								@if (_shoppingCartItems.Any())
+								{
+									<div class="header-cart bg-white -dark-bg-dark-1 rounded-8">
+										<div class="px-30 pt-30 pb-10">
+											@foreach (var item in _shoppingCartItems)
+											{
+												<div class="row justify-between x-gap-40 pb-20">
 													<div class="col">
-														<div class="text-dark-1 lh-15">دوره نهایی نقاشی از مبتدی تا پیشرفته...</div>
+														<div class="row x-gap-10 y-gap-10">
+															<div class="col-6">
+																<img src="@(item.MainImage)" alt="image">
+															</div>
 
-														<div class="d-flex items-center mt-10">
-															<div class="lh-12 fw-500 line-through text-light-1 ml-10">179</div>
-															<div class="text-15 lh-12 fw-500 text-dark-1">79000 تومان</div>
+															<div class="col">
+																<div class="text-dark-1 lh-15">@(item.Name)</div>
+
+																<div class="d-flex items-center mt-10">
+																	@* <div class="lh-12 fw-500 line-through text-light-1 ml-10">179</div> *@
+																	<div class="text-15 lh-12 fw-500 text-dark-1">@(item.FullPrice) تومان</div>
+																</div>
+															</div>
 														</div>
 													</div>
-												</div>
-											</div>
 
-											<div class="col-auto">
-												<button><img src="img/menus/close.svg" alt="icon"></button>
-											</div>
-										</div>
-
-										<div class="row justify-between x-gap-40 pb-20">
-											<div class="col">
-												<div class="row x-gap-10 y-gap-10">
 													<div class="col-auto">
-														<img src="img/menus/cart/2.png" alt="image">
-													</div>
-
-													<div class="col">
-														<div class="text-dark-1 lh-15">آموزش ساخت وب سایت خبری با React Node</div>
-
-														<div class="d-flex items-center mt-10">
-															<div class="lh-12 fw-500 line-through text-light-1 ml-10">179</div>
-															<div class="text-15 lh-12 fw-500 text-dark-1">79000 تومان</div>
-														</div>
+														<button><img src="img/menus/close.svg" alt="icon"></button>
 													</div>
 												</div>
-											</div>
-
-											<div class="col-auto">
-												<button><img src="img/menus/close.svg" alt="icon"></button>
-											</div>
+											}
 										</div>
 
-									</div>
-
-									<div class="px-30 pt-20 pb-30 border-top-light">
-										<div class="d-flex justify-between">
-											<div class="text-18 lh-12 text-dark-1 fw-500">جمع کل:</div>
-											<div class="text-18 lh-12 text-dark-1 fw-500">659000 تومان</div>
-										</div>
-
-										<div class="row x-gap-20 y-gap-10 pt-30">
-											<div class="col-sm-6">
-												<button class="button py-20 -dark-1 text-white -dark-button-white col-12">مشاهده سبد</button>
+										<div class="px-30 pt-20 pb-30 border-top-light">
+											<div class="d-flex justify-between">
+												<div class="text-18 lh-12 text-dark-1 fw-500">جمع کل:</div>
+												<div class="text-18 lh-12 text-dark-1 fw-500">@(_shoppingCartItems.Sum(i => i.FullPrice)) تومان</div>
 											</div>
-											<div class="col-sm-6">
-												<button class="button py-20 -purple-1 text-white col-12">تسویه حساب</button>
+
+											<div class="row x-gap-20 y-gap-10 pt-30">
+												<div class="col-sm-6">
+													<button class="button py-20 -dark-1 text-white -dark-button-white col-12">مشاهده سبد</button>
+												</div>
+												<div class="col-sm-6">
+													<button class="button py-20 -purple-1 text-white col-12">تسویه حساب</button>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
+
+								}
+								else
+								{
+									<div class="header-cart bg-white -dark-bg-dark-1 rounded-8">
+										<p>سبد شما خالی است</p>
+									</div>
+
+								}
 							</div>
 						</div>
 

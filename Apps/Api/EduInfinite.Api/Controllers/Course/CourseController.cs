@@ -74,6 +74,14 @@ namespace Edu_Infinite.Api.Controllers.Course
          await eventPublisher.Publish(courseDefinition);
          return Ok();
       }
+      [HttpPost]
+      [SwaggerOperation(Summary = "add course definition")]
+      [ProducesResponseType(200)]
+      [ProducesResponseType(400)]
+      public IActionResult AddCourse([FromBody] CourseCreateReqDto reqDto)
+      {
+         return Ok();
+      }
    }
 
    [Route("api/course/[action]")]
